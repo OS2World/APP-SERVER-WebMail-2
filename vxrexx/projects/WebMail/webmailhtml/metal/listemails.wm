@@ -1,0 +1,14 @@
+<center>
+<table border=0 cellspacing=2 cellpadding=1>
+ <tr>
+  <td bgcolor="#B0B0B0" align="center" valign="bottom">Actions</td>
+  <td bgcolor="#B0B0B0" align="center" valign="bottom">Subject</td>
+  <td bgcolor="#B0B0B0" align="center" valign="bottom">From</td>
+  <td bgcolor="#B0B0B0" align="center" valign="bottom">Date</td>
+  <td bgcolor="#B0B0B0" align="center" valign="bottom">Attachment</td>
+  <td bgcolor="#B0B0B0" align="center" valign="bottom">Priority</td>
+ </tr>
+*!WMEMAILTABLE!*
+</table>
+*!WMJUMPTABLE!*
+</center>

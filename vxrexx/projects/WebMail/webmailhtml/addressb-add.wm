@@ -1,0 +1,25 @@
+<p>
+<h2><b>*!SERVERERROR!*</b></h2>
+<form action="*!WMFILENAME!*" method="post" name="AddressBook">
+<input type="hidden" name="addressbadd" value="1">
+<input type="hidden" name="returnto" value="*!WMEMAILNUM!*">
+<center>
+  <table border="0">
+  <tr>
+    <td align="right"><img src="/webmailimages/alias.gif" alt="Alias:" title="Alias:"></td>
+    <td align="left" height="22"><input value="*!WMADDRBALIAS!*" type="text" name="a" size="30"></td>
+  </tr>
+  <tr>
+    <td align="right"><img src="/webmailimages/fullname.gif" alt="Full name:" title="Full name:"></td>
+    <td align="left" height="22"><input type="text" value="*!WMADDRBNAME!*" name="n" size="30"></td>
+  </tr>
+  <tr>
+    <td align="right"><img src="/webmailimages/abemail.gif" alt="Email:" title="Email:"></td>
+    <td align="left"><input type="text" value="*!WMADDREMAIL!*" name="e" size="30"></td>
+  </tr>
+ </table>
+ <p>
+  <input type="submit" value="Add">
+ </p>
+ </center>
+</form>

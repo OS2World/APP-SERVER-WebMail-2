@@ -1,0 +1,728 @@
+compface.obj(compface.c) :  error L2025: HexDigits : symbol defined more than once
+compface.obj(compface.c) :  error L2025: G : symbol defined more than once
+compface.obj(compface.c) :  error L2025: NumProbs : symbol defined more than once
+compface.obj(compface.c) :  error L2025: levels : symbol defined more than once
+compface.obj(compface.c) :  error L2025: freqs : symbol defined more than once
+
+ rxface
+
+ Start         Length     Name                   Class
+ 0001:00000000 00000C918H TEXT32                 CODE 32-bit
+ 0001:0000C918 000000004H SET1___CTOR_LIST__     CODE 32-bit
+ 0001:0000C91C 000000000H SET2___CTOR_LIST__     CODE 32-bit
+ 0001:0000C91C 000000004H SET3___CTOR_LIST__     CODE 32-bit
+ 0001:0000C920 000000004H SET1___DTOR_LIST__     CODE 32-bit
+ 0001:0000C924 000000000H SET2___DTOR_LIST__     CODE 32-bit
+ 0001:0000C924 000000004H SET3___DTOR_LIST__     CODE 32-bit
+ 0001:0000C928 000000004H SET1___crtinit1__      CODE 32-bit
+ 0001:0000C92C 000000008H SET2___crtinit1__      CODE 32-bit
+ 0001:0000C934 000000004H SET3___crtinit1__      CODE 32-bit
+ 0001:0000C938 000000004H SET1___crtexit1__      CODE 32-bit
+ 0001:0000C93C 000000004H SET2___crtexit1__      CODE 32-bit
+ 0001:0000C940 000000004H SET3___crtexit1__      CODE 32-bit
+ 0001:0000C944 000000004H SET1___eh_frame__      CODE 32-bit
+ 0001:0000C948 000000000H SET2___eh_frame__      CODE 32-bit
+ 0001:0000C948 000000004H SET3___eh_frame__      CODE 32-bit
+ 0001:0000C950 000000000H ________TEXT           CODE 32-bit
+ 0002:00000000 0000084C8H DATA32                 DATA 32-bit
+ 0002:000084D0 000000000H ________DATA           DATA 32-bit
+ 0002:000084D0 0000033A8H BSS32                  BSS 32-bit
+ 0002:0000B880 000007480H c_common               BSS 32-bit
+ 0002:00012D00 000000000H ________BSS            BSS 32-bit
+
+ Origin   Group
+ 0000:0   FLAT
+ 0002:0   DGROUP
+
+ Address       Export                  Alias
+
+ 0001:000014D5 COMPFACE                CompFace
+ 0001:00001536 UNCFACE                 UncFace
+
+  Address         Publics by Name
+
+ 0001:00004A5C       abort
+ 0001:00000D41       AllBlack
+ 0001:00000E59       AllWhite
+ 0001:000016D8       atoi
+ 0002:0000B884       B
+ 0001:000002F3       BigAdd
+ 0001:00000371       BigClear
+ 0001:00000121       BigDiv
+ 0001:0000021E       BigMul
+ 0001:000000AC       BigPop
+ 0001:00000069       BigPush
+ 0001:00000384       BigRead
+ 0001:000003CB       BigWrite
+ 0002:0000E0AC       cmdname
+ 0001:000013CD       CompAll
+ 0001:00000CA8       compface
+ 0001:000014D5       CompFace
+ 0002:00000088       compface_xbitmap
+ 0001:000011AD       Compress
+ 0002:000128B0       comp_env
+ 0000:00000000  Imp  DosAcknowledgeSignalException (DOSCALLS.418)
+ 0000:00000000  Imp  DosAllocMem          (DOSCALLS.299)
+ 0000:00000000  Imp  DosClose             (DOSCALLS.257)
+ 0000:00000000  Imp  DosCloseEventSem     (DOSCALLS.326)
+ 0000:00000000  Imp  DosCreateEventSem    (DOSCALLS.324)
+ 0000:00000000  Imp  DosCreateThread      (DOSCALLS.311)
+ 0000:00000000  Imp  DosDelete            (DOSCALLS.259)
+ 0000:00000000  Imp  DosExit              (DOSCALLS.234)
+ 0000:00000000  Imp  DosFindClose         (DOSCALLS.263)
+ 0000:00000000  Imp  DosFreeMem           (DOSCALLS.304)
+ 0000:00000000  Imp  DosGetInfoBlocks     (DOSCALLS.312)
+ 0000:00000000  Imp  DosKillThread        (DOSCALLS.111)
+ 0000:00000000  Imp  DosOpenEventSem      (DOSCALLS.325)
+ 0000:00000000  Imp  DosPostEventSem      (DOSCALLS.328)
+ 0000:00000000  Imp  DosQueryDBCSEnv      (NLS.6)
+ 0000:00000000  Imp  DosQueryFHState      (DOSCALLS.276)
+ 0000:00000000  Imp  DosQueryFileInfo     (DOSCALLS.279)
+ 0000:00000000  Imp  DosQueryHType        (DOSCALLS.224)
+ 0000:00000000  Imp  DosQueryNPHState     (DOSCALLS.245)
+ 0000:00000000  Imp  DosQuerySysInfo      (DOSCALLS.348)
+ 0000:00000000  Imp  DosResetEventSem     (DOSCALLS.327)
+ 0000:00000000  Imp  DosResumeThread      (DOSCALLS.237)
+ 0000:00000000  Imp  DosSetExceptionHandler (DOSCALLS.354)
+ 0000:00000000  Imp  DosSetFHState        (DOSCALLS.221)
+ 0000:00000000  Imp  DosSetFilePtr        (DOSCALLS.256)
+ 0000:00000000  Imp  DosSetFileSize       (DOSCALLS.272)
+ 0000:00000000  Imp  DosSetMem            (DOSCALLS.305)
+ 0000:00000000  Imp  DosSetSignalExceptionFocus (DOSCALLS.378)
+ 0000:00000000  Imp  DosSleep             (DOSCALLS.229)
+ 0000:00000000  Imp  DosSubAllocMem       (DOSCALLS.345)
+ 0000:00000000  Imp  DosSubFreeMem        (DOSCALLS.346)
+ 0000:00000000  Imp  DosSubSetMem         (DOSCALLS.344)
+ 0000:00000000  Imp  DosUnwindException   (DOSCALLS.357)
+ 0000:00000000  Imp  DosWaitEventSem      (DOSCALLS.329)
+ 0000:00000000  Imp  DosWrite             (DOSCALLS.282)
+ 0002:0000BAC8       F
+ 0002:0000C3C8       fbuf
+ 0001:0000C65C       fclose
+ 0001:00008748       fflush
+ 0001:000033F0       fputc
+ 0001:00003DC0       free
+ 0002:0000192C       freqs
+ 0001:00009950       ftell
+ 0001:0000497C       fwrite
+ 0002:000000AC       G
+ 0001:00000C08       GenFace
+ 0002:0000008C       HexDigits
+ 0002:0000320C       infile
+ 0002:00003210       inname
+ 0002:00001908       levels
+ 0001:000017FC       longjmp
+ 0001:00003DE8       malloc
+ 0001:00003E60       memchr
+ 0001:00005808       memcpy
+ 0001:00003E80       memmove
+ 0001:00003E34       memset
+ 0002:00001904       NumProbs
+ 0002:00003214       outfile
+ 0002:00003218       outname
+ 0001:00000E91       PopGreys
+ 0002:0000E0B0       ProbBuf
+ 0001:00000FA7       PushGreys
+ 0001:00008898       raise
+ 0001:00000445       ReadFace
+ 0001:0000C780       remove
+ 0001:00000028       RevPush
+ 0001:00000CF4       Same
+ 0001:000017CC       setjmp
+ 0001:0000B6F4       sig_info
+ 0001:00001724       sprintf
+ 0002:0000D088       status
+ 0001:0000C710       strcat
+ 0001:00001638       strcpy
+ 0001:00001654       strerror
+ 0001:000015F2       strerrorwrap
+ 0001:00001620       strlen
+ 0001:00001536       UncFace
+ 0001:000012F1       UnCompAll
+ 0001:00000C5C       uncompface
+ 0001:000010B6       UnCompress
+ 0001:00000C45       UnGenFace
+ 0000:00000000  Abs  WEAK$ZERO
+ 0001:000005F9       WriteFace
+ 0001:00004BC8       _beginthread
+ 0001:00005850       _bi_add_bb
+ 0001:000058F0       _bi_cmp_bb
+ 0001:0000594C       _bi_hdiv_rem_b
+ 0001:000095F8       _bi_mul_bb
+ 0001:00005A84       _bi_mul_bw
+ 0001:00007FB0       _bi_pow5
+ 0001:000096D4       _bi_set_b
+ 0001:00008240       _bi_set_d
+ 0001:00009724       _bi_set_w
+ 0001:000082B4       _bi_shl_b
+ 0001:000083F0       _bi_shl_w
+ 0001:00009750       _bi_sub_mul_bw
+ 0001:000084A0       _bi_wdiv_rem_pow2
+ 0001:00005330       _cleanup
+ 0001:0000C734       _close
+ 0001:00001C60       _closestream
+ 0001:0000C050       _CRT_init
+ 0001:0000C08C       _CRT_term
+ 0002:00005274       _ctype
+ 0002:00003238       _cur_lconv
+ 0002:00003268       _cur_mbyte
+ 0002:00000000       _data
+ 0001:0000A394       _DLL_InitTerm
+ 0002:000084D0       _edata
+ 0002:000128E4       _emx_env
+ 0001:0000A598       _emx_init
+ 0002:000128E0       _emx_rev
+ 0001:0000A5B6       _emx_syscall
+ 0001:00003E2C       _emx_tmalloc_magic
+ 0002:000128F0       _emx_vcmp
+ 0002:000128F4       _emx_vprt
+ 0002:00012D00       _end
+ 0001:00004CD0       _endthread
+ 0001:00001838       _entry2
+ 0001:000089AC       _errno
+ 0001:000089AC       _errno_fun
+ 0001:0000C950       _etext
+ 0001:00005358       _exit
+ 0001:0000A570       _exit_streams
+ 0001:00008538       _fbuf
+ 0002:0000547C       _fdvec_head
+ 0001:0000A20C       _fd_flags
+ 0001:0000A254       _fd_lookahead
+ 0001:00008610       _fflush_nolock
+ 0002:0000CC88       _files
+ 0001:0000465C       _flush
+ 0001:0000C330       _flushall
+ 0001:0000C140       _flushstream
+ 0001:00004ECC       _fmutex_checked_close
+ 0001:00004F00       _fmutex_checked_create
+ 0001:00004F34       _fmutex_checked_open
+ 0001:00004F68       _fmutex_checked_release
+ 0001:00004FC0       _fmutex_checked_request
+ 0001:00004DA8       _fmutex_close
+ 0001:00004D30       _fmutex_create
+ 0001:00004EB8       _fmutex_dummy
+ 0001:00004D74       _fmutex_open
+ 0001:00009844       _ftell_nolock
+ 0001:00004848       _fwrite_nolock
+ 0001:0000887C       _gettid
+ 0002:00000018       _heap_base
+ 0002:00000020       _heap_brk
+ 0002:0000001C       _heap_end
+ 0001:00000012       _init
+ 0001:0000A3F4       _init_streams
+ 0001:00009A28       _ioctl
+ 0002:0000548C       _io_ninherit
+ 0001:00001880       _itoa
+ 0002:00012900       _lookahead
+ 0001:00009B38       _lseek
+ 0001:00003F68       _ltoa
+ 0001:00003C40       _mbtowc
+ 0001:0000582C       _memrchr
+ 0001:00001908       _newstream
+ 0001:0000A3F0       _nfiles
+ 0001:000052E4       _nls_ctype_init
+ 0002:00005378       _nls_ctype_tab
+ 0002:000128E8       _osmajor
+ 0002:000128E9       _osminor
+ 0002:0000322C       _osmode
+ 0001:00002CC8       _output
+ 0001:0000C2A4       _rmtmp
+ 0001:000051CC       _rmutex_checked_close
+ 0001:00005200       _rmutex_checked_create
+ 0001:00005234       _rmutex_checked_open
+ 0001:0000512C       _rmutex_close
+ 0001:00005080       _rmutex_create
+ 0001:0000518C       _rmutex_dummy
+ 0001:00005268       _rmutex_fork
+ 0001:000050E0       _rmutex_open
+ 0001:00009F2C       _sbrk
+ 0001:00001C28       _setdummymore
+ 0001:00001A98       _setmore
+ 0001:000088BC       _sigaction
+ 0001:000088E8       _sigaddset
+ 0001:00008930       _sigemptyset
+ 0001:00008940       _sigismember
+ 0001:00008980       _sigprocmask
+ 0001:0000C510       _startup
+ 0002:00005490       _streamv
+ 0002:0000849C       _streamvec2_head
+ 0002:00008490       _streamvec_head
+ 0002:0000D090       _streamv_rmutex
+ 0001:000085C4       _stream_write
+ 0001:00003ECC       _strupr
+ 0002:000084B4       _sys_clock0_ms
+ 0001:0000BBC8       _sys_deliver_pending_signals
+ 0001:00003510       _sys_errlist
+ 0001:0000BC30       _sys_exception
+ 0001:0000AF20       _sys_expand_heap_by
+ 0001:0000AE28       _sys_expand_heap_obj_by
+ 0001:0000BCF0       _sys_get_clock
+ 0002:0000D0A0       _sys_heap_fmutex
+ 0002:0000CBC8       _sys_heap_objs
+ 0002:0000B880       _sys_heap_obj_count
+ 0002:000084C4       _sys_heap_size
+ 0001:0000BD2C       _sys_init_thread
+ 0002:000084B8       _sys_ino
+ 0001:00003BFC       _sys_nerr
+ 0002:000128EC       _sys_pid
+ 0002:000128FC       _sys_ppid
+ 0002:000084C0       _sys_private_heap
+ 0001:0000BEE0       _sys_set_errno
+ 0001:0000B1F4       _sys_shrink_heap_by
+ 0001:0000AEA4       _sys_shrink_heap_obj_by
+ 0001:0000B08C       _sys_shrink_heap_to
+ 0001:0000B6D4       _sys_sig_valid
+ 0001:0000BF2C       _sys_thread
+ 0002:0000D0A8       _sys_thread_table
+ 0002:0000E0A8       _sys_top_heap_obj
+ 0002:000084B0       _sys_uflags
+ 0002:000084AC       _sys_umask
+ 0002:000084BC       _sys_xreg
+ 0001:0000A29C       _tell
+ 0001:00000000       _text
+ 0001:00003C00       _thread
+ 0002:00004270       _thread_tab
+ 0001:0000942C       _ucreate2
+ 0001:00009F50       _uflags
+ 0001:0000A310       _ulimit
+ 0001:0000BFD4       _ulldiv
+ 0001:0000402C       _ulltoa
+ 0001:00004110       _ultoa
+ 0001:00005740       _umalloc
+ 0001:0000A0EC       _um_addmem_nolock
+ 0001:00009170       _um_alloc_no_lock
+ 0001:00008C30       _um_crumb_alloc
+ 0001:00005438       _um_crumb_free_maybe_lock
+ 0001:00008A50       _um_default_alloc
+ 0001:00008B00       _um_default_expand
+ 0001:00008B9C       _um_default_release
+ 0001:00008BE0       _um_default_shrink
+ 0001:000091F8       _um_find_bucket
+ 0001:000055E4       _um_free_maybe_lock
+ 0001:00005658       _um_init_default_regular_heap
+ 0001:0000A17C       _um_init_default_tiled_heap
+ 0001:0000902C       _um_lump_alloc
+ 0001:0000935C       _um_lump_coalesce_free
+ 0001:00005520       _um_lump_free_maybe_lock
+ 0001:0000929C       _um_lump_link_heap
+ 0001:000092F4       _um_lump_make_free
+ 0001:00009220       _um_lump_unlink_bucket
+ 0001:0000925C       _um_lump_unlink_heap
+ 0002:0000D08C       _um_regular_heap
+ 0001:00009FB4       _um_seg_addmem
+ 0001:0000A078       _um_seg_setmem
+ 0002:00005478       _um_tiled_heap
+ 0001:000095AC       _uopen
+ 0001:00009E24       _write
+ 0001:00004B38       __alloc_thread
+ 0001:0000C7A4       __close
+ 0001:0000C938       __crtexit1__
+ 0001:0000C928       __crtinit1__
+ 0001:0000C0C0       __ctordtorInit
+ 0001:0000C464       __ctordtorInit1
+ 0001:0000C108       __ctordtorTerm
+ 0001:000089D0       __ctordtorTerm1
+ 0001:0000C918       __CTOR_LIST__
+ 0001:000041FC       __dtoa
+ 0001:0000C920       __DTOR_LIST__
+ 0001:0000C8F8       __eh_frame_init
+ 0001:0000C908       __eh_frame_term
+ 0001:0000C944       __eh_frame__
+ 0001:0000A5B8       __emx_version
+ 0001:0000A5C8       __endthread
+ 0001:0000A638       __exit
+ 0001:0000C7E0       __fcntl
+ 0001:00004E7C       __fmutex_release_internal
+ 0001:00004DDC       __fmutex_request_internal
+ 0001:00003EFC       __fpclassifyl
+ 0001:0000A65C       __ftruncate
+ 0001:0000B450       __init
+ 0001:0000A6C4       __initthread
+ 0001:0000A5AC       __init_ret
+ 0001:0000A6F8       __ioctl2
+ 0001:0000A7E4       __lseek
+ 0001:0000A8B0       __newthread
+ 0001:0000A8E0       __nls_ctype
+ 0001:0000A994       __os_version
+ 0001:00001837       __POST$longjmp
+ 0001:00003E7D       __POST$memchr
+ 0001:0000582A       __POST$memcpy
+ 0001:00003ECA       __POST$memmove
+ 0001:00003E5E       __POST$memset
+ 0001:000017FA       __POST$setjmp
+ 0001:0000C730       __POST$strcat
+ 0001:00001650       __POST$strcpy
+ 0001:00001636       __POST$strlen
+ 0001:000058EC       __POST$_bi_add_bb
+ 0001:000096BC       __POST$_bi_mul_bb
+ 0001:00005AE4       __POST$_bi_mul_bw
+ 0001:000097F4       __POST$_bi_sub_mul_bw
+ 0001:0000187F       __POST$_entry2
+ 0001:000089C5       __POST$_errno
+ 0001:0000888E       __POST$_gettid
+ 0001:0000584F       __POST$_memrchr
+ 0001:00003C1D       __POST$_thread
+ 0001:0000C02E       __POST$_ulldiv
+ 0001:00003F12       __POST$__fpclassifyl
+ 0001:00003F66       __POST$__signbitl
+ 0001:0000A9F4       __raise
+ 0001:0000C8BC       __remove
+ 0001:00003FF0       __remove_zeros
+ 0001:0000AA6C       __sbrk
+ 0001:0000AB4C       __sigaction
+ 0001:00003F5C       __signbitl
+ 0001:0000AC30       __sigprocmask
+ 0001:00009F78       __smutex_request_internal
+ 0001:0000000C       __syscall
+ 0001:0000A830       __sys_newthread
+ 0001:0000BF5C       __udivdi3
+ 0001:0000ACCC       __uflags
+ 0001:0000ACF0       __ulimit
+ 0001:0000BF98       __umoddi3
+ 0001:0000AD60       __unwind2
+ 0001:0000AD78       __write
+
+  Address         Publics by Value
+
+ 0000:00000000  Imp  DosSetSignalExceptionFocus (DOSCALLS.378)
+ 0000:00000000  Imp  DosSubFreeMem        (DOSCALLS.346)
+ 0000:00000000  Imp  DosClose             (DOSCALLS.257)
+ 0000:00000000  Imp  DosUnwindException   (DOSCALLS.357)
+ 0000:00000000  Imp  DosFreeMem           (DOSCALLS.304)
+ 0000:00000000  Imp  DosExit              (DOSCALLS.234)
+ 0000:00000000  Imp  DosQueryNPHState     (DOSCALLS.245)
+ 0000:00000000  Imp  DosCreateThread      (DOSCALLS.311)
+ 0000:00000000  Abs  WEAK$ZERO
+ 0000:00000000  Imp  DosKillThread        (DOSCALLS.111)
+ 0000:00000000  Imp  DosSetFilePtr        (DOSCALLS.256)
+ 0000:00000000  Imp  DosQueryHType        (DOSCALLS.224)
+ 0000:00000000  Imp  DosSleep             (DOSCALLS.229)
+ 0000:00000000  Imp  DosQuerySysInfo      (DOSCALLS.348)
+ 0000:00000000  Imp  DosWrite             (DOSCALLS.282)
+ 0000:00000000  Imp  DosCloseEventSem     (DOSCALLS.326)
+ 0000:00000000  Imp  DosCreateEventSem    (DOSCALLS.324)
+ 0000:00000000  Imp  DosSetFHState        (DOSCALLS.221)
+ 0000:00000000  Imp  DosSetExceptionHandler (DOSCALLS.354)
+ 0000:00000000  Imp  DosDelete            (DOSCALLS.259)
+ 0000:00000000  Imp  DosResumeThread      (DOSCALLS.237)
+ 0000:00000000  Imp  DosPostEventSem      (DOSCALLS.328)
+ 0000:00000000  Imp  DosAcknowledgeSignalException (DOSCALLS.418)
+ 0000:00000000  Imp  DosSubSetMem         (DOSCALLS.344)
+ 0000:00000000  Imp  DosGetInfoBlocks     (DOSCALLS.312)
+ 0000:00000000  Imp  DosQueryFHState      (DOSCALLS.276)
+ 0000:00000000  Imp  DosSetMem            (DOSCALLS.305)
+ 0000:00000000  Imp  DosSetFileSize       (DOSCALLS.272)
+ 0000:00000000  Imp  DosOpenEventSem      (DOSCALLS.325)
+ 0000:00000000  Imp  DosResetEventSem     (DOSCALLS.327)
+ 0000:00000000  Imp  DosAllocMem          (DOSCALLS.299)
+ 0000:00000000  Imp  DosFindClose         (DOSCALLS.263)
+ 0000:00000000  Imp  DosWaitEventSem      (DOSCALLS.329)
+ 0000:00000000  Imp  DosQueryFileInfo     (DOSCALLS.279)
+ 0000:00000000  Imp  DosSubAllocMem       (DOSCALLS.345)
+ 0000:00000000  Imp  DosQueryDBCSEnv      (NLS.6)
+ 0001:00000000       _text
+ 0001:0000000C       __syscall
+ 0001:00000012       _init
+ 0001:00000028       RevPush
+ 0001:00000069       BigPush
+ 0001:000000AC       BigPop
+ 0001:00000121       BigDiv
+ 0001:0000021E       BigMul
+ 0001:000002F3       BigAdd
+ 0001:00000371       BigClear
+ 0001:00000384       BigRead
+ 0001:000003CB       BigWrite
+ 0001:00000445       ReadFace
+ 0001:000005F9       WriteFace
+ 0001:00000C08       GenFace
+ 0001:00000C45       UnGenFace
+ 0001:00000C5C       uncompface
+ 0001:00000CA8       compface
+ 0001:00000CF4       Same
+ 0001:00000D41       AllBlack
+ 0001:00000E59       AllWhite
+ 0001:00000E91       PopGreys
+ 0001:00000FA7       PushGreys
+ 0001:000010B6       UnCompress
+ 0001:000011AD       Compress
+ 0001:000012F1       UnCompAll
+ 0001:000013CD       CompAll
+ 0001:000014D5       CompFace
+ 0001:00001536       UncFace
+ 0001:000015F2       strerrorwrap
+ 0001:00001620       strlen
+ 0001:00001636       __POST$strlen
+ 0001:00001638       strcpy
+ 0001:00001650       __POST$strcpy
+ 0001:00001654       strerror
+ 0001:000016D8       atoi
+ 0001:00001724       sprintf
+ 0001:000017CC       setjmp
+ 0001:000017FA       __POST$setjmp
+ 0001:000017FC       longjmp
+ 0001:00001837       __POST$longjmp
+ 0001:00001838       _entry2
+ 0001:0000187F       __POST$_entry2
+ 0001:00001880       _itoa
+ 0001:00001908       _newstream
+ 0001:00001A98       _setmore
+ 0001:00001C28       _setdummymore
+ 0001:00001C60       _closestream
+ 0001:00002CC8       _output
+ 0001:000033F0       fputc
+ 0001:00003510       _sys_errlist
+ 0001:00003BFC       _sys_nerr
+ 0001:00003C00       _thread
+ 0001:00003C1D       __POST$_thread
+ 0001:00003C40       _mbtowc
+ 0001:00003DC0       free
+ 0001:00003DE8       malloc
+ 0001:00003E2C       _emx_tmalloc_magic
+ 0001:00003E34       memset
+ 0001:00003E5E       __POST$memset
+ 0001:00003E60       memchr
+ 0001:00003E7D       __POST$memchr
+ 0001:00003E80       memmove
+ 0001:00003ECA       __POST$memmove
+ 0001:00003ECC       _strupr
+ 0001:00003EFC       __fpclassifyl
+ 0001:00003F12       __POST$__fpclassifyl
+ 0001:00003F5C       __signbitl
+ 0001:00003F66       __POST$__signbitl
+ 0001:00003F68       _ltoa
+ 0001:00003FF0       __remove_zeros
+ 0001:0000402C       _ulltoa
+ 0001:00004110       _ultoa
+ 0001:000041FC       __dtoa
+ 0001:0000465C       _flush
+ 0001:00004848       _fwrite_nolock
+ 0001:0000497C       fwrite
+ 0001:00004A5C       abort
+ 0001:00004B38       __alloc_thread
+ 0001:00004BC8       _beginthread
+ 0001:00004CD0       _endthread
+ 0001:00004D30       _fmutex_create
+ 0001:00004D74       _fmutex_open
+ 0001:00004DA8       _fmutex_close
+ 0001:00004DDC       __fmutex_request_internal
+ 0001:00004E7C       __fmutex_release_internal
+ 0001:00004EB8       _fmutex_dummy
+ 0001:00004ECC       _fmutex_checked_close
+ 0001:00004F00       _fmutex_checked_create
+ 0001:00004F34       _fmutex_checked_open
+ 0001:00004F68       _fmutex_checked_release
+ 0001:00004FC0       _fmutex_checked_request
+ 0001:00005080       _rmutex_create
+ 0001:000050E0       _rmutex_open
+ 0001:0000512C       _rmutex_close
+ 0001:0000518C       _rmutex_dummy
+ 0001:000051CC       _rmutex_checked_close
+ 0001:00005200       _rmutex_checked_create
+ 0001:00005234       _rmutex_checked_open
+ 0001:00005268       _rmutex_fork
+ 0001:000052E4       _nls_ctype_init
+ 0001:00005330       _cleanup
+ 0001:00005358       _exit
+ 0001:00005438       _um_crumb_free_maybe_lock
+ 0001:00005520       _um_lump_free_maybe_lock
+ 0001:000055E4       _um_free_maybe_lock
+ 0001:00005658       _um_init_default_regular_heap
+ 0001:00005740       _umalloc
+ 0001:00005808       memcpy
+ 0001:0000582A       __POST$memcpy
+ 0001:0000582C       _memrchr
+ 0001:0000584F       __POST$_memrchr
+ 0001:00005850       _bi_add_bb
+ 0001:000058EC       __POST$_bi_add_bb
+ 0001:000058F0       _bi_cmp_bb
+ 0001:0000594C       _bi_hdiv_rem_b
+ 0001:00005A84       _bi_mul_bw
+ 0001:00005AE4       __POST$_bi_mul_bw
+ 0001:00007FB0       _bi_pow5
+ 0001:00008240       _bi_set_d
+ 0001:000082B4       _bi_shl_b
+ 0001:000083F0       _bi_shl_w
+ 0001:000084A0       _bi_wdiv_rem_pow2
+ 0001:00008538       _fbuf
+ 0001:000085C4       _stream_write
+ 0001:00008610       _fflush_nolock
+ 0001:00008748       fflush
+ 0001:0000887C       _gettid
+ 0001:0000888E       __POST$_gettid
+ 0001:00008898       raise
+ 0001:000088BC       _sigaction
+ 0001:000088E8       _sigaddset
+ 0001:00008930       _sigemptyset
+ 0001:00008940       _sigismember
+ 0001:00008980       _sigprocmask
+ 0001:000089AC       _errno_fun
+ 0001:000089AC       _errno
+ 0001:000089C5       __POST$_errno
+ 0001:000089D0       __ctordtorTerm1
+ 0001:00008A50       _um_default_alloc
+ 0001:00008B00       _um_default_expand
+ 0001:00008B9C       _um_default_release
+ 0001:00008BE0       _um_default_shrink
+ 0001:00008C30       _um_crumb_alloc
+ 0001:0000902C       _um_lump_alloc
+ 0001:00009170       _um_alloc_no_lock
+ 0001:000091F8       _um_find_bucket
+ 0001:00009220       _um_lump_unlink_bucket
+ 0001:0000925C       _um_lump_unlink_heap
+ 0001:0000929C       _um_lump_link_heap
+ 0001:000092F4       _um_lump_make_free
+ 0001:0000935C       _um_lump_coalesce_free
+ 0001:0000942C       _ucreate2
+ 0001:000095AC       _uopen
+ 0001:000095F8       _bi_mul_bb
+ 0001:000096BC       __POST$_bi_mul_bb
+ 0001:000096D4       _bi_set_b
+ 0001:00009724       _bi_set_w
+ 0001:00009750       _bi_sub_mul_bw
+ 0001:000097F4       __POST$_bi_sub_mul_bw
+ 0001:00009844       _ftell_nolock
+ 0001:00009950       ftell
+ 0001:00009A28       _ioctl
+ 0001:00009B38       _lseek
+ 0001:00009E24       _write
+ 0001:00009F2C       _sbrk
+ 0001:00009F50       _uflags
+ 0001:00009F78       __smutex_request_internal
+ 0001:00009FB4       _um_seg_addmem
+ 0001:0000A078       _um_seg_setmem
+ 0001:0000A0EC       _um_addmem_nolock
+ 0001:0000A17C       _um_init_default_tiled_heap
+ 0001:0000A20C       _fd_flags
+ 0001:0000A254       _fd_lookahead
+ 0001:0000A29C       _tell
+ 0001:0000A310       _ulimit
+ 0001:0000A394       _DLL_InitTerm
+ 0001:0000A3F0       _nfiles
+ 0001:0000A3F4       _init_streams
+ 0001:0000A570       _exit_streams
+ 0001:0000A598       _emx_init
+ 0001:0000A5AC       __init_ret
+ 0001:0000A5B6       _emx_syscall
+ 0001:0000A5B8       __emx_version
+ 0001:0000A5C8       __endthread
+ 0001:0000A638       __exit
+ 0001:0000A65C       __ftruncate
+ 0001:0000A6C4       __initthread
+ 0001:0000A6F8       __ioctl2
+ 0001:0000A7E4       __lseek
+ 0001:0000A830       __sys_newthread
+ 0001:0000A8B0       __newthread
+ 0001:0000A8E0       __nls_ctype
+ 0001:0000A994       __os_version
+ 0001:0000A9F4       __raise
+ 0001:0000AA6C       __sbrk
+ 0001:0000AB4C       __sigaction
+ 0001:0000AC30       __sigprocmask
+ 0001:0000ACCC       __uflags
+ 0001:0000ACF0       __ulimit
+ 0001:0000AD60       __unwind2
+ 0001:0000AD78       __write
+ 0001:0000AE28       _sys_expand_heap_obj_by
+ 0001:0000AEA4       _sys_shrink_heap_obj_by
+ 0001:0000AF20       _sys_expand_heap_by
+ 0001:0000B08C       _sys_shrink_heap_to
+ 0001:0000B1F4       _sys_shrink_heap_by
+ 0001:0000B450       __init
+ 0001:0000B6D4       _sys_sig_valid
+ 0001:0000B6F4       sig_info
+ 0001:0000BBC8       _sys_deliver_pending_signals
+ 0001:0000BC30       _sys_exception
+ 0001:0000BCF0       _sys_get_clock
+ 0001:0000BD2C       _sys_init_thread
+ 0001:0000BEE0       _sys_set_errno
+ 0001:0000BF2C       _sys_thread
+ 0001:0000BF5C       __udivdi3
+ 0001:0000BF98       __umoddi3
+ 0001:0000BFD4       _ulldiv
+ 0001:0000C02E       __POST$_ulldiv
+ 0001:0000C050       _CRT_init
+ 0001:0000C08C       _CRT_term
+ 0001:0000C0C0       __ctordtorInit
+ 0001:0000C108       __ctordtorTerm
+ 0001:0000C140       _flushstream
+ 0001:0000C2A4       _rmtmp
+ 0001:0000C330       _flushall
+ 0001:0000C464       __ctordtorInit1
+ 0001:0000C510       _startup
+ 0001:0000C65C       fclose
+ 0001:0000C710       strcat
+ 0001:0000C730       __POST$strcat
+ 0001:0000C734       _close
+ 0001:0000C780       remove
+ 0001:0000C7A4       __close
+ 0001:0000C7E0       __fcntl
+ 0001:0000C8BC       __remove
+ 0001:0000C8F8       __eh_frame_init
+ 0001:0000C908       __eh_frame_term
+ 0001:0000C918       __CTOR_LIST__
+ 0001:0000C920       __DTOR_LIST__
+ 0001:0000C928       __crtinit1__
+ 0001:0000C938       __crtexit1__
+ 0001:0000C944       __eh_frame__
+ 0001:0000C950       _etext
+ 0002:00000000       _data
+ 0002:00000018       _heap_base
+ 0002:0000001C       _heap_end
+ 0002:00000020       _heap_brk
+ 0002:00000088       compface_xbitmap
+ 0002:0000008C       HexDigits
+ 0002:000000AC       G
+ 0002:00001904       NumProbs
+ 0002:00001908       levels
+ 0002:0000192C       freqs
+ 0002:0000320C       infile
+ 0002:00003210       inname
+ 0002:00003214       outfile
+ 0002:00003218       outname
+ 0002:0000322C       _osmode
+ 0002:00003238       _cur_lconv
+ 0002:00003268       _cur_mbyte
+ 0002:00004270       _thread_tab
+ 0002:00005274       _ctype
+ 0002:00005378       _nls_ctype_tab
+ 0002:00005478       _um_tiled_heap
+ 0002:0000547C       _fdvec_head
+ 0002:0000548C       _io_ninherit
+ 0002:00005490       _streamv
+ 0002:00008490       _streamvec_head
+ 0002:0000849C       _streamvec2_head
+ 0002:000084AC       _sys_umask
+ 0002:000084B0       _sys_uflags
+ 0002:000084B4       _sys_clock0_ms
+ 0002:000084B8       _sys_ino
+ 0002:000084BC       _sys_xreg
+ 0002:000084C0       _sys_private_heap
+ 0002:000084C4       _sys_heap_size
+ 0002:000084D0       _edata
+ 0002:0000B880       _sys_heap_obj_count
+ 0002:0000B884       B
+ 0002:0000BAC8       F
+ 0002:0000C3C8       fbuf
+ 0002:0000CBC8       _sys_heap_objs
+ 0002:0000CC88       _files
+ 0002:0000D088       status
+ 0002:0000D08C       _um_regular_heap
+ 0002:0000D090       _streamv_rmutex
+ 0002:0000D0A0       _sys_heap_fmutex
+ 0002:0000D0A8       _sys_thread_table
+ 0002:0000E0A8       _sys_top_heap_obj
+ 0002:0000E0AC       cmdname
+ 0002:0000E0B0       ProbBuf
+ 0002:000128B0       comp_env
+ 0002:000128E0       _emx_rev
+ 0002:000128E4       _emx_env
+ 0002:000128E8       _osmajor
+ 0002:000128E9       _osminor
+ 0002:000128EC       _sys_pid
+ 0002:000128F0       _emx_vcmp
+ 0002:000128F4       _emx_vprt
+ 0002:000128FC       _sys_ppid
+ 0002:00012900       _lookahead
+ 0002:00012D00       _end
+
+Program entry point at 0001:00000000

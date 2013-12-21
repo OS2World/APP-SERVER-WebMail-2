@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>*!WMVERSION!*</title>
+<meta http-equiv="Content-Type" content="text/html; charset=*!WMCHARSET!*">
+</head>
+<body bgcolor="#0099FF" text="#FFFF33" link="#FFFF33" vlink="#FFFF33" alink="#FFFF33">
+<br>
+<p><img src="/webmailimages/s-webmail.gif" align="right" alt="WebMail/2" title="WebMail/2"></p>
+<br>
+Please follow the instructions above each field. When you are finished
+click on 'Register'. Your account will be created as soon as possible.
+<p>
+<h2><b>*!SERVERERROR!*</b></h2>
+<br>
+<center>
+<form method="post" action="*!WMFILENAME!*" name="new user">
+<input type="hidden" name="userreg" value="1">
+ <table border="0" cellspacing="10">
+ <tr>
+  <td align="right"><img src="/webmailimages/name.gif" align="middle" alt="Name:" title="Name"></td>
+  <td align="left"><input type="text" name="n" size="25"></td>
+  <td align="left" colspan="2"><br>Enter your name. It will be stored with the email account.</td>
+ </tr>
+ <tr>
+  <td align="right"><img src="/webmailimages/email.gif" align="middle" alt="Email:" title="Email"></td>
+  <td align="left"><input type="text" name="e" size="25"></td>
+  <td align="left" colspan="2"><br>Enter the user ID that you'd like to use in your email. Its the first part of your email before the '@'. It must be between 4 and 8 characters long without any spaces.</td>
+ </tr>
+ <tr>
+  <td align="right"><img src="/webmailimages/domain.gif" alt="Domain:" title="Domain"></td>
+  <td align="left"><select name="d"><option selected>@hicdbs</option><option>@server</option><option>@thinkpad</option></select></td>
+  <td align="left" colspan="2"><br>Choose the domain name that you'd like to use. This is the field after the '@' character of your full email address.</td>
+ </tr>
+ <tr>
+  <td align="right"><img src="/webmailimages/password.gif" align="middle" alt="Password:" title="Password"></td>
+  <td align="left"><input type="password" name="p" size="25"></td>
+  <td align="left" colspan="2"><br>Enter the password that you'd like to use. It must be atleat 4 characters long. It's a good idea to use mixed numbers and characters.</td>
+ <tr>
+</table>
+<p><input type="submit" value="Register"></p>
+</form>
+</center>
+<img src="/webmailimages/powered.gif" align="right" alt="Powered by OS/2" title="Powered by OS/2">
+</body>
+</html>

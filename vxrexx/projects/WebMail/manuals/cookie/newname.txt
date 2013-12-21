@@ -1,0 +1,16 @@
+! But I don't know your name.<br>
+
+<br>Would you like to enter Your name?
+
+<form method= POST action="http://www.lakeweb.com/testcookie/newname.cgi">
+
+First name:<br>
+<input type=text name= fname size= 50 maxlength= 50><br>
+Last name:<br>
+<input type=text name= lname size= 50 maxlength= 50><br>
+eMail address:<br>
+<input type=text name= email size= 50 maxlength= 50><br><br>
+
+<input type= submit value= Enter Name>&nbsp&nbsp
+<input type= reset></form><BR><BR>
+

@@ -1,0 +1,489 @@
+<HTML>
+<HEAD>
+<TITLE>Caching Tutorial for Web Authors and Webmasters</TITLE>
+<link rel="STYLESHEET" type="text/css" href="tutstyle.css">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<table width=100% border=0 cellspacing=0 cellpadding=4>
+<tr bgcolor=black border=0>
+<td>
+&nbsp;
+<br>
+<center>
+<font COLOR="red" face="Arial,helvetica" size=+1>
+<b>Web Caching</b>
+</font>
+
+<font size=2>
+<FORM ACTION="http://search.freefind.com/find.html" METHOD="GET">
+<INPUT TYPE="HIDDEN" NAME="id" SIZE="-1" VALUE="2780213">
+<INPUT TYPE="HIDDEN" NAME="pageid" SIZE="-1" VALUE="r">
+<INPUT TYPE="HIDDEN" NAME="mode" SIZE="-1" VALUE="ALL">
+<!--&nbsp;-->
+<INPUT TYPE="TEXT" NAME="query" SIZE="10">
+<font size=1>
+<INPUT TYPE="SUBMIT"
+VALUE="Search">
+</font></FORM>
+</font>
+
+</center>
+</td>
+<td>
+
+<table width=100%>
+<tr valign=top>
+<td>
+<!-- BEGIN RICH-MEDIA BURST! CODE --> 
+<script language="JavaScript"> 
+<!-- /* © 1997-1999 BURST! Media, LLC. All Rights Reserved.*/ 
+        var TheAdcode = 'ad6550a'; 
+        var bN = navigator.appName; 
+        var bV = parseInt(navigator.appVersion); 
+        var base='http://www.burstnet.com/'; 
+        var Tv=''; 
+        var agt=navigator.userAgent.toLowerCase(); 
+        if (bV>=4) 
+          {ts=window.location.pathname+window.location.search; 
+           i=0; Tv=0; while (i< ts.length) 
+              { Tv=Tv+ts.charCodeAt(i); i=i+1; } Tv="/"+Tv;} 
+          else   {Tv=escape(window.location.pathname); 
+           if( Tv.charAt(0)!='/' ) Tv="/"+Tv; 
+                  else if (Tv.charAt(1)=="/")
+        Tv=""; 
+          if( Tv.charAt(Tv.length-1) == "/") 
+            Tv = Tv + "_";} 
+        if (bN=='Netscape'){ 
+             if ((bV>=4)&&(agt.indexOf("mac")==-1))
+        {  document.write('<s'+'cript src="'+ 
+              base+'cgi-bin/ads/'+TheAdcode+'.cgi/RETURN-CODE/JS' 
+              +Tv+'">'); 
+             document.write('</'+'script>');    
+        } 
+             else if (bV>=3) {document.write('<'+'a href="'+base+'ads/'+ 
+                TheAdcode+'-map.cgi'+Tv+'"target=_top>'); 
+                document.write('<img src="' + base + 'cgi-bin/ads/' + 
+                TheAdcode + '.cgi' + Tv + '" ismap width="468" height="60"' + 
+                ' border="0" alt="Click Here"></a>');} 
+         } 
+        if (bN=='Microsoft Internet Explorer') 
+         document.write('<ifr'+'ame id="BURST" src="'+base+'cgi-bin/ads/' + 
+          TheAdcode + '.cgi' + Tv + '/RETURN-CODE" width="468" height="60"' + 
+          'marginwidth="0" marginheight="0" hspace="0" vspace="0" ' + 
+          'frameborder="0" scrolling="no"></ifr'+'ame>'); 
+        // --> 
+</script> 
+<noscript><a href="http://www.burstnet.com/ads/ad6550a-map.cgi"
+target="_top"> 
+<img src="http://www.burstnet.com/cgi-bin/ads/ad6550a.cgi" 
+width="468" height="60" border="0" alt="Click Here"></a> 
+</noscript> 
+<!-- END BURST CODE --> 
+
+</td> </tr>
+</table>
+
+</td>
+</tr>
+<tr>
+<td width=165 valign=top bgcolor=FFE0E0 rowspan=2>
+<FONT SIZE=3 FACE="Arial, Helvetica">
+<p class="menu">
+&nbsp;<br>
+<B>Background</B><BR>
+&nbsp;
+<A href="http://www.web-caching.com/" target="_top">Home</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/welcome.html"
+target="_top">Introduction</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/mnot_tutorial/"
+target="_top">Tutorial</A>
+<BR>
+&nbsp;
+<a href="http://www.web-caching.com/cgi-web-caching/forums/Ultimate.cgi"
+target="_top">Discussion Groups</a>
+</P>
+
+<p class="menu">
+<B>Industry</B><BR>
+&nbsp;
+<A href="http://www.web-caching.com/news.html" target="_top">Caching
+News</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/market.html"
+target="_top">Market Analysis</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/proxy-caches.html" target="_top">Proxy
+Caches</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/proxy-comparison.html"
+target="_top">Proxy Comparisons</A>
+<BR>
+&nbsp;
+<A
+href="http://www.web-caching.com/personal-caches.html"
+target="_top">Browser Caches</A>
+</P>
+
+<p class="menu">
+<B>Research</B><BR>
+&nbsp;
+<A href="http://www.web-caching.com/research-projects.html"
+target="_top">Research Projects</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/traces-logs.html" target="_top">Web
+Traces & Logs</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/biblio.html"
+target="_top">Caching Bibliography</A>
+</P>
+
+<p class="menu">
+<b>Publications</b><BR>
+&nbsp;
+<A href="http://www.web-caching.com/books.html"
+target="_top">Books</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/publications.html"
+target="_top">Conferences & Journals</A>
+</P>
+
+<p class="menu">
+<B>Other Resources</B><BR>
+&nbsp;
+<A href="http://www.web-caching.com/tools.html"
+target="_top">Tools</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/mailing-lists.html"
+target="_top">Mailing Lists</A>
+<BR>
+&nbsp;
+<A href="http://www.web-caching.com/online-resources.html"
+target="_top">Other Web Sites</A>
+</p>
+
+<p class="menu">
+<b>web-caching.com</b><br>
+&nbsp;
+<a href="http://www.web-caching.com/about.html" target=_top>About This
+Site</a>
+<br>
+&nbsp;
+<a href="http://www.web-caching.com/privacy.html" target=_top>Privacy 
+Policy</a>
+<br>
+&nbsp;
+<a href="http://www.web-caching.com/advertising.html"
+target="_top">Advertising</a>
+<br>
+&nbsp;
+<a href="http://www.web-caching.com/changes.html" target="_top">Site
+Changes</a>
+<br>
+&nbsp;
+<a href="http://www.web-caching.com/feedback.html"
+target="_top">Feedback</a>
+</p>
+<center>
+<a href="http://vancouver-webpages.com/CacheNow/">
+<img src="http://www.web-caching.com/images/cache_now.gif" 
+alt="Cache Now!" width=100 height=31></a>
+</center>
+</font>
+<HR>
+<FONT SIZE=3 FACE="Arial, Helvetica">
+&nbsp;<FONT SIZE=1>Copyright &#169;1999-2000<br></font>
+&nbsp;<FONT SIZE=1>All rights reserved.</font>
+</font>
+</td> <td marginwidth=10 marginheight=10 valign=top>
+<font face="Arial,helvetica">
+<p>
+<blockquote>
+[<a href="intro.html">Previous Page</a>]
+[<a href="./">Table of Contents</a>]
+[<a href="tips.html">Next Page</a>]
+<hr>
+<h2><a name="WORK">How Web Caches Work</a></h2>
+
+<p>All caches have a set of rules that they use to determine when
+to serve an object from the cache, if its available. Some of these
+rules are set in the protocols (HTTP 1.0 and 1.1), and some are set
+by the administrator of the cache (either the user of the browser
+cache, or the proxy administrator).</p>
+
+<p>Generally speaking, these are the most common rules that are
+followed for a particular request (don't worry if you don't
+understand the details, it will be explained below):</p>
+
+<DIV class="ol"><ol>
+<li>If the object's headers tell the cache not to keep the object,
+it won't. Also, if no validator is present, most caches will mark
+the object as uncacheable.</li>
+
+<li>If the object is authenticated or secure, it won't be
+cached.</li>
+
+<li>A cached object is considered <em>fresh</em> (that is, able to
+be sent to a client without checking with the origin server) if: 
+
+<ul>
+<li>It has an expiry time or other age-controlling directive set,
+and is still within the fresh period.</li>
+
+<li>If a browser cache has already seen the object, and has been
+set to check once a session.</li>
+
+<li>If a proxy cache has seen the object recently, and it was
+modified relatively long ago.</li>
+</ul>
+
+Fresh documents are served directly from the cache, without
+checking with the origin server.</li>
+
+<li>If an object is stale, the origin server will be asked to <em>
+validate</em> the object, or tell the cache whether the copy that
+it has is still good.</li>
+</ol></DIV>
+
+<P>Together, freshness and validation are the most important ways 
+that a cache works with content. A fresh object will be available
+instantly from the cache, while a validated object will avoid sending
+the entire object over again if it hasn't changed. </P>
+
+
+<h2><a name="CONTROL">How (and how not) to Control Caches</a></h2>
+
+<p>There are several tools that Web designers and Webmasters can
+use to fine-tune how caches will treat their sites. It may require
+getting your hands a little dirty with the server configuration,
+but the results are worth it. For details on how to use these tools
+with your server, see the <a
+href="notes.html#IMP-SERVER">Implementation</a>
+sections below.</p>
+
+
+<h3><a name="META">HTML Meta Tags vs. HTTP Headers</a></h3>
+
+<p>HTML authors can put tags in a document's &lt;HEAD&gt; section
+that describe its attributes. These <em>Meta tags</em> are often
+used in the belief that they can mark a document as uncacheable, or
+expire it at a certain time.</p>
+
+<p>Meta tags are easy to use, but aren't very effective. That's
+because they're usually only honored by browser caches (which
+actually read the HTML), not proxy caches (which almost never read
+the HTML in the document). While it may be tempting to slap a
+Pragma: no-cache meta tag on a home page, it won't necessarily
+cause it to be kept fresh, if it goes through a shared cache.</p>
+
+<p>On the other hand, true <em>HTTP headers</em> give you a lot of
+control over how both browser caches and proxies handle your
+objects. They can't be seen in the HTML, and are usually
+automatically generated by the Web server. However, you can control
+them to some degree, depending on the server you use. In the
+following sections, you'll see what HTTP headers are interesting,
+and how to apply them to your site.</p>
+
+<ul>
+<li>If your site is hosted at an ISP or hosting farm and they don't
+give you the ability to set arbitrary HTTP headers (like Expires
+and Cache-Control), complain loudly; these are tools necessary for
+doing your job.</li>
+</ul>
+
+<p>HTTP headers are sent by the server before the HTML, and only
+seen by the browser and any intermediate caches. Typical HTTP 1.1
+response headers might look like this:</p>
+
+<pre>
+HTTP/1.1 200 OK
+Date: Fri, 30 Oct 1998 13:19:41 GMT
+Server: Apache/1.3.3 (Unix)
+Cache-Control: max-age=3600, must-revalidate
+Expires: Fri, 30 Oct 1998 14:19:41 GMT
+Last-Modified: Mon, 29 Jun 1998 02:28:12 GMT
+ETag: "3e86-410-3596fbbc"
+Content-Length: 1040
+Content-Type: text/html
+</pre>
+
+<p>The HTML document would follow these headers, separated by a
+blank line.</p>
+
+<h3><a name="PRAGMA">Pragma HTTP Headers (and why they don't
+work)</a></h3>
+
+<p>Many people believe that assigning a Pragma: no-cache HTTP
+header to an object will make it uncacheable. This is not
+necessarily true; the HTTP specification does not set any
+guidelines for Pragma response headers; instead, Pragma request
+headers (the headers that a browser sends to a server) are
+discussed. Although a few caches may honor this header, the
+majority won't, and it won't have any effect. Use the headers below
+instead.</p>
+
+<h3><a name="EXPIRES">Controlling Freshness with the Expires HTTP
+Header</a></h3>
+
+<p>The Expires HTTP header is the basic means of controlling
+caches; it tells all caches how long the object is fresh for; after
+that time, caches will always check back with the origin server to
+see if a document is changed. Expires headers are supported by
+practically every client.</p>
+
+<p>Most Web servers allow you to set Expires response headers in a
+number of ways. Commonly, they will allow setting an absolute time
+to expire, a time based on the last time that the client saw the
+object (last <em>access time</em>), or a time based on the last
+time the document changed on your server (last <em>modification
+time</em>).</p>
+
+<p>Expires headers are especially good for making static images
+(like navigation bars and buttons) cacheable. Because they don't
+change much, you can set extremely long expiry time on them, making
+your site appear much more responsive to your users. They're also
+useful for controlling caching of a page that is regularly changed.
+For instance, if you update a news page once a day at 6am, you can
+set the object to expire at that time, so caches will know when to
+get a fresh copy, without users having to hit 'reload'.</p>
+
+<p>The <strong>only</strong> value valid in an Expires header is a
+HTTP date; anything else will most likely be interpreted as 'in the
+past', so that the object is uncacheable. Also, remember that the
+time in a HTTP date is Greenwich Mean Time (GMT), not local
+time.</p>
+
+<p>For example:</P>
+<PRE>
+Expires: Fri, 30 Oct 1998 14:19:41 GMT
+</PRE>
+
+<h3><a name="CACHE-CONTROL">Cache-Control HTTP Headers</a></h3>
+
+<p>Although the Expires header is useful, it is still somewhat
+limited; there are many situations where content is cacheable, but
+the HTTP 1.0 protocol lacks methods of telling caches what it is,
+or how to work with it.</p>
+
+<p>HTTP 1.1 introduces a new class of headers, the <em>
+Cache-Control response headers</em>, which allow Web publishers to
+define how pages should be handled by caches. They include
+directives to declare what should be cacheable, what may be stored
+by caches, modifications of the expiration mechanism, and
+revalidation and reload controls.</p>
+
+<p>Interesting Cache-Control response headers include:</p>
+
+<ul>
+<li><strong>max-age=</strong>[seconds] - specifies the maximum amount of
+that an object will be considered fresh. Similar to Expires, this directive
+allows more flexibility. [seconds] is the number of seconds from the time of
+the request you wish the object to be fresh for.</li>
+
+<li><strong>s-maxage=</strong>[seconds] - similar to max-age, except that it
+only applies to proxy (shared) caches.</li>
+
+<li><strong>public</strong> - marks the response as cacheable, even
+if it would normally be uncacheable. For instance, if your pages
+are authenticated, the public directive makes them cacheable.</li>
+
+<li><strong>no-cache</strong> - forces caches (both proxy
+and browser) to submit the request to the origin server for
+validation before releasing a cached copy, every time. This is
+useful for to assure that authentication is respected (in
+combination with public), or to maintain rigid object freshness,
+without sacrificing all of the benefits of caching.</li>
+
+<li><strong>must-revalidate</strong> - tells caches that they must obey
+any freshness information you give them about an object. The HTTP allows
+caches to take liberties with the freshness of objects; by specifying this
+header, you're telling the cache that you want it to strictly follow your
+rules.</li>
+
+<li><strong>proxy-revalidate</strong> - similar to must-revalidate,
+except that it only applies to proxy caches.</li>
+</ul>
+
+<P>For example:</P>
+<PRE>
+Cache-Control: max-age=3600, must-revalidate
+</PRE>
+
+<p>If you plan to use the Cache-Control headers, you should have a
+look at the excellent documentation in the HTTP 1.1 draft; see
+<A HREF="refs.html#REF">References and Further Information</A>.</p>
+
+<h3><a name="VALIDATE">Validators and Validation</a></h3>
+
+<p>In <a href="how.html#WORK">How Web Caches Work</a>, we said that
+validation is used by servers and caches to communicate when an
+object has changed. By using it, caches avoid having to download
+the entire object when they already have a copy locally, but
+they're not sure if it's still fresh.</p>
+
+<p>Validators are very important; if one isn't
+present, and there isn't any freshness information (Expires or Cache-Control)
+available, most caches will not store an object at all.</p>
+
+<p>The most common validator is the time that the document last
+changed, the <em>Last-Modified</em> time. When a cache has an
+object stored that includes a Last-Modified header, it can use it
+to ask the server if the object has changed since the last time it
+was seen, with an <em>If-Modified-Since</em> request.</p>
+
+<p>HTTP 1.1 introduced a new kind of validator called the ETag.
+Etags are unique identifiers that are generated by the server and
+changed every time the object does. Because the server controls how
+the ETag is generated, caches can be surer that if the ETag matches
+when they make a If-None-Match request, the object really is the
+same.</p>
+
+<p>Almost all caches use Last-Modified times in determining if an
+object is fresh; as more HTTP/1.1 caches come online, Etag headers
+will also be used.</p>
+
+<p>Most modern Web servers will generate both ETag and
+Last-Modified validators for static content automatically; you
+won't have to do anything. However, they don't know enough about
+dynamic content (like CGI, ASP or database sites) to generate them;
+see <a href="tips.html#SCRIPT">Writing Cache-Aware Scripts</a>.</p>
+<hr>
+[<a href="intro.html">Previous Page</a>]
+[<a href="./">Table of Contents</a>]
+[<a href="tips.html">Next Page</a>]
+</blockquote>
+</font>
+
+</td>
+</tr>
+<tr><td>
+<hr>
+<!-- BEGIN LINKEXCHANGE CODE --> 
+<center><iframe src="http://leader.linkexchange.com/17/X887385/showiframe?"
+width=468 height=60 marginwidth=0 marginheight=0 hspace=0 vspace=0
+frameborder=0 scrolling=no>
+<a href="http://leader.linkexchange.com/17/X887385/clickle"
+target="_top"><img width=468 height=60 border=0 ismap alt=""
+src="http://leader.linkexchange.com/17/X887385/showle?"></a></iframe><br><a
+href="http://leader.linkexchange.com/17/X887385/clicklogo"
+target="_top"><img
+src="http://leader.linkexchange.com/17/X887385/showlogo?" width=468
+height=16 border=0 ismap alt=""></a><br></center>
+<!-- END LINKEXCHANGE CODE -->
+</td>
+</tr>
+</table>
+
+</BODY>
+</HTML>

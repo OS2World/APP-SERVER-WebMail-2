@@ -1,0 +1,500 @@
+<html>
+<head>
+ <title>WebMail/2 Documentation</title>
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+ <meta name="generator" content="my damn hands">
+ <meta name="author" content="Dimitrios 'sehh' Michelinakis">
+</head>
+<body>
+<h1><a name="5"></a>Chapter 5 - Technical reference</h1>
+<h2><a name="5.1"></a>5.1 - FAQ</h2>
+<P>
+<b>Q: I've installed WebMail/2, how to i use it now?</b><br>
+A: Load your web browser and point to http://"your web server here"/cgi-bin/webmail2.cmd.<br>
+<p>
+<b>Q: I always get Access Denied!</b><br>
+A: There are several things to check:<br>
+<p>1) The 'Accepted Domains' section in the setup doesn't have the required domain names.
+<p>2) The 'Client Access Control' needs to be set to 0.0.0.0.
+<p>3) The 'Server Access Control' must include the IP address of the web server(s).
+<p>4) Make sure webmail2.cmd has the IP and port that WebManager listens to.
+<p>5) If you use Inet.MailPro then make sure you've setup the currept .pas files and domain names.
+<p>
+<b>Q: What is Globals.!TagLine="NO" in webmail2.cmd for?</b><br>
+A: If you change it to YES, then every time you compose an email, you'll get a nice tag line at the bottom (ala good old BBS style).<br>
+<p>
+<b>Q: I've upgraded from v5.0 to a later version and i get empty pages.</b><br>
+A: The path to the .wm files requires a trailing slash.<br>
+<p>
+<b>Q: Am i required to always login with my full email address?</b><br>
+A: A full email address at login is required if you've setup more than one domains, in the Accepted Domains section.<br>
+<p>
+<b>Q: I don't like to edit the webmail2.cmd all the time, is there any other way to specify the settings?</b><br>
+A: Yes, you can use environment variables, please read <a href="chapter-4.html#4.1">chapter 4.1</a>. You may also use the automatic installation script which automatically upgrades new versions of the CGI with your existing settings.<br>
+<p>
+<b>Q: I can login, but selecting any option gets me back to the login prompt!</b><br>
+A: Thats because your web browser or web server doesn't support cookies. Please look at the supported web servers section in <a href="chapter-2.html#2.1.1">chapter 2.1.1</a><br>
+<p>
+<b>Q: I add/remove users from my POP3 server and the changes are not recognized by WebMail/2.</b><br>
+A: Every time you make changes to your users, create a file named 'refresh' in the current directory of WebManager.<br>
+<p>
+<b>Q: I'd like to embed the login screen into my site's pages, is it possible?</b><br>
+A: Yes, grab a copy of the login screen and use it in your own pages. You may use wget or the Save As... option from your web browser.<br>
+<p>
+<b>Q: I have changed the .wm and image files. What is going to happen in a future upgrade of WebMail/2? Do i need to re-modify the .wm files every time?</b><br>
+A: No. New versions of WebMail/2 are backwards compatible, so a future version will work with your modified .wm and image files. You may loose a few new features from new .wm files but these can be integrated later on.<br>
+<p>
+<b>Q: The InBox screen is VERY slow, all other pages are quite fast. Why is that?</b><br>
+A: That is a problem in your POP3 server. Some POP3 servers have a very slow 'TOP' command processing. Contact author of the software for help. You may also test this by using the 'Remote Control' feature of PMMail, it will run as slow.<br>
+<p>
+<b>Q: Does WebMail/2 support APOP?</b><br>
+A: Yes, it will detect POP3 servers that support APOP, and use APOP to login.<br>
+</P>
+<h2><a name="5.2"></a>5.2 - WM files</h2>
+<P>
+<a href="http://validator.w3.org/check/referer"><img border="0" src="valid-html401.gif" alt="Valid HTML 4.01!" height="31" width="88"></a>
+All the .wm files are W3C HTML 4.01 valid.
+</P
+<P>
+<center>
+ <table width=95% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=40% bgcolor="#0099FF">
+    <font color="#ffffff">Filename</font>
+   </th>
+   <th width=60% bgcolor="#0099FF">
+    <font color="#ffffff">Description</font>
+   </th>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>addressb-add.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Add to AddressBook page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>addressb-table.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>AddressBook table.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>addressb.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>AddressBook listing page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>attachment-no.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>No attachment text.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>attachment-table.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Attachment table</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>attachment-yes.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Attachment exists.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>composeemail.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Compose email.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>footer.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Footer html.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>header.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Header html.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>help.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Help button html.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>jump-table.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Jump email page table.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>listemails-table.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>List emails table.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>listemails.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>List emails main html page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>loginerror.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Access denied page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>newuser-thankyou.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Page displayed after new user registration.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>newuser.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>New User Registration page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>nomail.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>No mail text.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>printemail.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Read email page designed for printing.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>priority-high.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>High priority text.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>priority-low.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Low priority text.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>priority-normal.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Normal priority text.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>reademail.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Read email page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>reply.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Reply email page, includes dual To: field.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>servererror.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Server Error page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>setup.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>User options and signature page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>userlogin.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>User login page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>userlogin2.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>User login page for New User Registration feature.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>user.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>User email listing.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>user-add.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Add to user email listing.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>user-add.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>Add to user email listing.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=40% bgcolor="#e6e6e6"><p>user-table.wm</p></td>
+   <td width=60% bgcolor="#e6e6e6"><p>User email listing table.</p></td>
+  </tr>
+ </table>
+</center>
+</P>
+<h2><a name="5.3"></a>5.3 - WM file variables</h2>
+<P>
+<center>
+ <table width=95% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=15% bgcolor="#0099FF">
+    <font color="#ffffff">Variable</font>
+   </th>
+   <th width=15% bgcolor="#0099FF">
+    <font color="#ffffff">Location</font>
+   </th>
+   <th width=70% bgcolor="#0099FF">
+    <font color="#ffffff">Description</font>
+   </th>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMVERSION!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>WebMail/2 logo name</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMUSER!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>User email ID, effective after user login.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMPASS!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>User password, only used for administration, effective after user login.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMFILENAME!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The actual CGI filename (webmail2.cmd), reported by SCRIPT_NAME environment.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILNUM!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox, Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The number represents a specific email on the email server.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILFROM!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox, Read, Compose</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Email source address (From: field).</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILSUBJECT!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox, Read, Compose</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Email subject (Subject: field)</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILDATE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox, Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Email date (Date: field)</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILBODY!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Read, Compose</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The body of the email while reading, or replying.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILTABLE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Table listing emails on email server.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!SERVERERROR!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>If there is an error, this variable is initialized.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMATTACHMENT!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox, Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Shows attachment status.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILPRIORITY!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox, Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p></p>Show email priority level.</td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMAUTHID!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Unique ID number set by cookies, effective after user login.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMATTACHMENTSTABLE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>List of file attachments.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMATTACHFILE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Attachment Table</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Attachment filename.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMJUMPTABLE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Page numbers of email pages.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMJUMPPAGE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Jump Table</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Page number.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMPREVEMAILNUM!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Previous email number.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMNEXTEMAILNUM!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Next email number</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILCC!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Compose</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>List of emails for Cc: field, separated by spaces.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILREPLYTO!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Compose</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Replaced with the From: email when Reply-To: exists.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMPAGE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Points to the current Inbox page.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMTOTALSIZE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Inbox</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Total size (kb) of emails in the account.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMADDRBTABLE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>AddressBook</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Table listing AddressBook entries.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMADDRBALIAS!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>AddressBook</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The alias for this AddressBook entry.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMADDRBNAME!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>AddressBook</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The name for this AddressBook entry.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMADDREMAIL!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>AddressBook</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The email for this AddressBook entry.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMCHARSET!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Character set. Default is iso-8859-1.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMSIGNATURE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Setup</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Users signature.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMSHOWHEADERS!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Setup</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Enable/Disable show headers checkbox.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMSHOWHTML!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Setup</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Enable/Disable show HTML checkbox.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILBCC!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Setup, Compose, Reply</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>List of emails for Bcc: field, separated by spaces.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMEMAILFAKE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Setup, Compose, Reply</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The email address to use in the From: field.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMFULLNAME!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>All</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>The full name of the user. WebManager will read it from OS/2 supported email servers.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMTIMEZONESELECT!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Setup</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Represents a list of HTML options used in the selection of the timezone offset.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMXFACE!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Read</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>HTML image tag to an X-Face bitmap.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>*!WMPPATH!*</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>Anywhere</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>An optional prefix path to images or CSS which can be appended before the image location.</p></td>
+  </tr>
+ </table>
+</center>
+</P>
+<h2><a name="5.4"></a>5.4 - JunkSpy</h2>
+<P>
+<center>
+ <table width=60% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=30% bgcolor="#0099FF">
+    <font color="#ffffff">Application</font>
+   </th>
+   <td width=70% bgcolor="#e6e6e6"><p>JunkSpy 2.0 or later</p></td>
+  </tr>
+  <tr valign=top>
+   <th width=30% bgcolor="#0099FF">
+    <font color="#ffffff">URL</font>
+   </th>
+   <td width=70% bgcolor="#e6e6e6"><p><a href="http://www.junkspy.com">www.junkspy.com</a></p></td>
+  </tr>
+ </table>
+</center>
+</P>
+<P>
+JunkSpy is a junk mail detector for OS/2. It runs between WebMail/2 and
+the POP3 server. When an email is detected as junk the body of the email
+is replaced with an appropriate message telling the user that the particular
+email is junk.
+</P>
+<P>
+Bellow are the instructions to configure JunkSpy with WebMail/2.
+</P>
+<P>
+1) Install JunkSpy, version 2.0 or later.<br>
+<br>
+2) Start JunkSpy. If you have a POP3 server running on the same machine
+you'll get an error that JunkSpy couldn't bind the TCP port, that is not
+a problem, ignore the error.<br>
+<br>
+3) Right-click on JunkSpy and select Settings->Post Office.<br>
+<br>
+4) At the top of the window, section "Servers", enter the IP address of
+the machine running your POP3 and SMTP servers. Those are the same addresses
+that you use in WebMail/2 under the WebManager settings.<br>
+<br>
+5) At the bottom of the window enable "Local Connection", and enter in
+the "Listen Port" section the number 111. If you have something else using
+TCP port 111 then enter a free TCP port number.<br>
+<br>
+6) Again right-click on JunkSpy and select Settings->Detector.<br>
+<br>
+7) At the "Action" settings select "Destroy Message". You might also
+want to disable the External Detectors if you are on dialup.<br>
+<br>
+8) Start WebManager go to the "Settings - Page 1". At the "POP3/SMTP Servers"
+section change the IP address and Port number of the POP3 server to point
+to the IP and Port of the machine running JunkSpy. The port number is
+the same as the one entered under the "Local Connection" in JunkSpy.<br>
+<br>
+9) Restart JunkSpy and WebManager for the settings to take effect.<br>
+<br>
+</P>
+<P>
+It's strongly suggested to use JunkSpy at the same machine as your email
+server and to use the local loopback (127.0.0.1) address for communications
+between the two programs and the email server for improved performance.
+</P>
+<h2><a name="5.5"></a>5.5 - UNIX Systems</h2>
+<P>
+WebMail/2 has an experimental support for UNIX systems. This support is for
+webmail2.cmd which is the CGI part of WebMail/2. It allows you to use
+webmail2.cmd under any UNIX operating system which runs a compatible web
+server and a Rexx interpreter with the required libraries.</P>
+<P>
+The CGI script will run under any web server which supports CGI/1.0 execution
+and cookies. Your Rexx interpreter must also have a TCP/IP socket library
+and Base64/Quoted-Printable libraries.</P>
+<P>
+We've tested WebMail/2 under Linux and FreeBSD, with Regina Rexx and IBM's
+ObjectRexx. IBM's interpreter provides the rxsock library, so if you use
+Regina please download the 3rd party library from <a href="http://ftp.qut.edu.au/pub/markh/RxSock/RxSock-1.2.tar.gz">here</a>.</P>
+<P>
+Although webmail2.cmd has been re-written to support any Rexx interpreter,
+there are some incompatibilities with the TCP/IP socket libraries between
+interpreters, and the support for Base64 and Quoted-Printable encodings. So
+you may be able to run webmail2.cmd up to a point, but may encounter problems.
+</P>
+<P>
+Please remember that UNIX support is still in its early stages.
+</P>
+<h2><a name="5.6"></a>5.6 - Development progress</h2>
+<P>
+This is a graph which shows the development progress of public releases
+(green dots) and beta versions (red dots) over the time period that WebMail/2
+has been on development.
+</P>
+<P>
+<center><img src="webmail2-dev.png"></center>
+</P>
+</body>
+</html>

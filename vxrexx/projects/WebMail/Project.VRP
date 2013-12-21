@@ -1,0 +1,16 @@
+VX-REXX OS/2 V2.14 Build B3
+VRX: Window1.VRX
+VRX: rexx_md5.VRX
+VRX: Daemon.VRX
+VRX: Spawner.VRX
+MacroPath: VRM:C:\Utils\vxrexx\projects\WebMail
+EXEPath: C:\Utils\vxrexx\projects\WebMail\WebManager.exe
+RunParameters: 
+RunDirectory: C:\Utils\vxrexx\projects\WebMail
+VRXWindow: __VREMainWindow,1,265,-47,8877,12346
+VRXWindow: __VREFileListWindow,1,6685,5155,2361,3349
+VRXWindow: __VRESectionListWindow,1,675,8721,6348,3349
+VRXWindow: __VREToolsWindow,1,373,9491,4478,1667
+VRXWindow: __VREWindListWindow,1,6685,8624,2361,3457
+UserFile: 1
+UserWindow: Window1,1

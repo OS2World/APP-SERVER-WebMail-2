@@ -1,0 +1,16 @@
+<a href="*!WMFILENAME!*?email&amp;a" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('AddressbAdd','','/webmailimages/addentry-o.gif',1)"><img name="AddressbAdd" border="0" src="/webmailimages/addentry.gif" alt="Add entry" title="Add entry"></a>
+<p>
+<h2><b>*!SERVERERROR!*</b></h2>
+<center>
+<table border="6" align="center">
+ <tr>
+  <td align="center"><img src="/webmailimages/actions.gif" alt="Actions" title="Actions"></td>
+  <td align="center"><img src="/webmailimages/abemail.gif" alt="Email" title="Email"></td>
+ </tr>
+ <tr>
+  <td height="50" align="center">Login Email</td>
+  <td align="center">"*!WMFULLNAME!*"&nbsp;&lt;*!WMUSER!*&gt;</td>
+ </tr>
+*!WMEMAILTABLE!*
+</table>
+</center>

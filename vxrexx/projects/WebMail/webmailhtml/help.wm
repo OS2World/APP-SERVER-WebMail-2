@@ -1,0 +1,45 @@
+<p>These pages are divided into parts, each part is explained below.</p>
+<p><font size="+1"><b><i>InBox</i></b></font><br>
+The Inbox page displays the emails in your account. Each email has<br>
+list of Actions, the email Subject, the From field, the file attachment<br>
+status and the priority indicator.</p>
+<p>You can read by clicking on the Read icon or on the Subject. You can<br>
+reply by clicking on the Reply icon or on the From address, and you<br>
+can delete emails by clicking on the delete icon.</p>
+<p><font size="+1"><b><i>Read Email</i></b></font><br>
+The Read Email page allows you to read an email. After you click the<br>
+Read icon or the Subject of an email you will be taken to this page.</p>
+<p>You can reply or delete the current email, and also move to the next or<br>
+previous email if there are any. If an email has file attachments, the file<br>
+names will be listed in the 'Attachments' section.</p>
+<p>You can also add the senders email address in your Contacts by<br>
+clicking on the 'Add to Contacts' icon from the 'Actions' section.</p>
+<p>The print button will display the current email in a new window, in<br>
+a special format that makes it easy to print.</p> 
+<p><font size="+1"><b><i>Compose</i></b></font><br>
+The Compose page allows you to write or reply to emails.</p>
+<p>You can use a combination of From, Cc and Bcc to send your email to<br>
+multiple people. Cc stands for Carbon Copy and email addresses listed under<br>
+it will receive a copy of your email and their email address will be included<br>
+in the email which is also posted to everyone else if there are multiple email<br>
+addresses. Bcc stands for Blind Carbon Copy and email addresses listed<br>
+under it will receive a copy of your email but their email address will NOT be<br>
+included in any of the copies of the email to other people.</p>
+<p>All the email fields (To, Cc, Bcc) can hold multiple email addresses when<br>
+each email is separated by a space. You can also upload a file attachment to<br>
+go with the email at the bottom of the page.</p>
+<p><font size="+1"><b><i>Contacts</i></b></font><br>
+The Contacts page allows you to define aliases for frequently used email<br>
+addresses along with the persons full name.</p>
+<p>To use them while composing an email you can write the defined alises in<br>
+the To/Cc/Bcc fields and they will be automatically replaced by the<br>
+corresponding email address.</p>
+<p>Multiple aliases can be defined in the same field if each alias is separated by<br>
+a space, along with any email addresses.</p>
+<p><font size="+1"><b><i>Setup</i></b></font><br>
+The Setup page allows you to change several options and to define your<br>
+signature. You may enable the viewing of email headers, or the viewing of<br>
+HTML emails without converting them to text. The signature defines a string<br>
+of text which is appended at the end of your emails. Maximum 250 characters<br>
+are allowed.</p>
+<p>

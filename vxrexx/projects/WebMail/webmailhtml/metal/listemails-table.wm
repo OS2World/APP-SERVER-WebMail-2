@@ -1,0 +1,8 @@
+ <tr>
+  <td bgcolor="#B0B0B0" align="center" nowrap><font size="-1"><a href="*!WMFILENAME!*?read&amp;*!WMEMAILNUM!*">Read</a> <a href="*!WMFILENAME!*?new&amp;*!WMEMAILNUM!*">Reply</a> <a href="*!WMFILENAME!*?delete&amp;*!WMEMAILNUM!*">Delete</a></font></td>
+  <td bgcolor="#E0E0E0" align="center"><a href="*!WMFILENAME!*?read&amp;*!WMEMAILNUM!*">*!WMEMAILSUBJECT!*</a></td>
+  <td bgcolor="#E0E0E0" align="center"><a href="*!WMFILENAME!*?new&amp;*!WMEMAILNUM!*">*!WMEMAILFROM!*</a>*!WMXFACE!*</td>
+  <td bgcolor="#E0E0E0" align="center"><font size="-1">*!WMEMAILDATE!*</font></td>
+  <td bgcolor="#E0E0E0" align="center"><font size="-1">*!WMATTACHMENT!*</font></td>
+  <td bgcolor="#E0E0E0" align="center"><font size="-1">*!WMEMAILPRIORITY!*</font></td>
+ </tr>

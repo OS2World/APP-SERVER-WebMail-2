@@ -1,0 +1,15 @@
+<center><a href="*!WMFILENAME!*?email&amp;a">Add entry</a>
+<p>
+<h2><b>*!SERVERERROR!*</b></h2>
+<table border=0 cellpadding=1 cellspacing=2>
+ <tr>
+  <td bgcolor="#B0B0B0" align="center">Actions</td>
+  <td bgcolor="#B0B0B0" align="center">Email</td>
+ </tr>
+ <tr>
+  <td bgcolor="#B0B0B0" align="center">Login Email</td>
+  <td bgcolor="#E0E0E0" align="center">"*!WMFULLNAME!*"&nbsp;&lt;*!WMUSER!*&gt;</td>
+ </tr>
+*!WMEMAILTABLE!*
+</table>
+</center>

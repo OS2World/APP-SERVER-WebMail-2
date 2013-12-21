@@ -1,0 +1,168 @@
+<html>
+<head>
+ <title>WebMail/2 Documentation</title>
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+ <meta name="generator" content="my damn hands">
+ <meta name="author" content="Dimitrios 'sehh' Michelinakis">
+</head>
+<body>
+<h1><a name="1"></a>Chapter 1 - Introduction</h1>
+<h2><a name="1.1"></a>1.1 - What is WebMail/2</h2>
+<P><a href="webmailshot.png"><img align="right" src="webmailshot-s.png"></a>
+WebMail/2 is a web to email gateway. It allows users to use their browser
+as an email client, and allows administrators to use their existing email
+solution on the web.
+</P>
+<h2><a name="1.2"></a>1.2 - Architecture</h2>
+<P>
+WebMail/2 allows you to use your web browser as a full-featured e-mail
+client.  It does this by interfacing your web server with your e-mail
+server and allowing a web browser to send and receive e-mail
+information. You can use your existing email configuration.</P>
+<P>
+A WebMail/2 system includes three items:  an OS/2-based web server(s)
+which call the WebMail/2 CGI script, an e-mail server (POP3 and SMTP)
+which is not required to exist under OS/2, and the WebMail/2 WebManager.
+The CGI script communicates with the WebManager for authentication and
+connects to the email server to send and receive emails.  The WebManager
+is responsible for handling authentication with the users database.
+It determines who is allowed to use the WebMail/2 system, and handles
+access control rights per IP address.</P>
+<P>
+All three of these servers can run on the same machine, or each of
+these can run on their own machine.  The two most popular
+configurations will be the single-server solution and the multi-server
+solution. A complex system may use multiple web servers to execute
+multiple WebMail/2 CGI scripts, which authenticate at the same users
+databas on the same or different WebManager.</P>
+<P>
+In the single-server solution, all of these parts run on the same
+machine.  Obviously, this machine must be running OS/2.  This is the
+simplest to set up and debug.  Unless your mail and web servers are
+already running on separate machines, or you forsee one of these
+services requiring its own machine in the near future, this will
+probably be the setup you want.</P>
+<P>
+In the multi-server solution, your web server(s) and e-mail server run on
+different machines.  In this case, only the web server must be running
+OS/2.  With this solution, you get the ability to run whatever
+mail server you would like (that supports POP3 and SMTP, of course),
+under whatever operating system you would like.  There are certain
+advantages to using an OS/2 e-mail server, however. Also you are allowed
+to run as many web servers as you like in case you have more than
+one servers/domains.</P>
+<P>
+Theoretically, you could run the web server(s), e-mail server and
+WebMail/2 WebManager server each on their own machine, though this only
+makes sense on large networks which span through an intranet. The
+WebManager will run just fine on either the web server or an OS/2-based
+e-mail server.
+</P>
+<h2><a name="1.3"></a>1.3 - Contact information</h2>
+<P>
+<center>
+ <table width=80% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=20% bgcolor="#0099FF">
+    <font color="#ffffff">Author</font>
+   </th>
+   <td width=80% bgcolor="#e6e6e6"><p>Dimitrios 'sehh' Michelinakis</p></td>
+  </tr>
+  <tr valign=top>
+   <th width=20% bgcolor="#0099FF">
+    <font color="#ffffff">Email</font>
+   </th>
+   <td width=80% bgcolor="#e6e6e6"><p><a href="mailto:sehh@altered.com">sehh@altered.com</a></p></td>
+  </tr>
+  <tr>
+   <th width=20% bgcolor="#0099FF">
+    <font color="#ffffff">Home Page</font>
+   </th>
+   <td width=80% bgcolor="#e6e6e6"><p><a href="http://www.michelinakis.gr/Dimitris/webmail/" target="_blank">http://www.michelinakis.gr/Dimitris/webmail/</a></p></td>
+  </tr>
+ </table>
+</center>
+</P>
+<h2><a name="1.3.1"></a>1.3.1 - Mailing list</h2>
+<P>
+If you would like to help in the development of WebMail/2 or you would like to
+receive the latest beta versions then you can become a beta tester by joining
+the WebMail/2 mailing list. The list provides help and assistance for
+installation and configuration problems. You can also report bugs and request
+features that you would like to see in future versions.</P>
+<P>
+To subscribe to the <b>mailinglist</b>, simply send a message with the word 'subscribe'
+in the Subject: field to the -request address of that list.</P>
+<P>
+<b>To: <a href="mailto:webmail2-request@michelinakis.gr">webmail2-request@michelinakis.gr</a><br>
+Subject: subscribe</b></P>
+<P>
+To subscribe to the <b>digest</b>, simply send a message with the word 'subscribe' in the
+Subject: field to the following address.</P>
+<P>
+<b>To: <a href="mailto:webmail2-d-request@michelinakis.gr">webmail2-d-request@michelinakis.gr</a><br>
+Subject: subscribe</b>
+</P>
+<h2><a name="1.3.2"></a>1.3.2 - Bug reports</h2>
+<P>
+Please view open bug reports and report new bugs at
+the bug tracking report facility:
+<p>
+<table width=50% border=0 cellpadding=4 cellspacing=0 align="center">
+<tr bgcolor="#e6e6e6"><td align="center"><a href="http://www.michelinakis.gr/Dimitris/webmail/bugtracker/" target="_blank">Bug Tracking Report Facility</a></td></tr>
+</table>
+</P>
+<h2><a name="1.4"></a>1.4 - Site list</h2>
+<P>
+This is a short list of web sites which use WebMail/2 in every day life.
+<center>
+ <table width=80% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=40% bgcolor="#0099FF">
+    <font color="#ffffff">Site</font>
+   </th>
+   <th width=60% bgcolor="#0099FF">
+    <font color="#ffffff">Description</font>
+   </th>
+  </tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.itisvinci.com</td>
+  <td>Istituto Tecnico Industriale Leonardo da Vinci</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.os2ug.se</td>
+  <td>Swedish OS/2 Users Group</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://celkunststoffen.khlim.be</td>
+  <td>Cel Kunststoffen, KHLim Dep. IWT</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.soundy.org</td>
+  <td>Matt's Site</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.bbfprinting.com</td>
+  <td>BBF Printing Solutions</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.comkal.net</td>
+  <td>ComKal Networks</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.os2site.com</td>
+  <td>OS/2 Site</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.sbt.net.au</td>
+  <td>SBT Internet Systems</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.conacom.de</td>
+  <td>Consulting and communication</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.flbsd.mb.ca</td>
+  <td>Fort La Bosse School Division # 41</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.more4u.de</td>
+  <td>More4U GbR Internet Value Added Services</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://bbs.quasarbbs.net</td>
+  <td>QuasarBBS</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.dinosoft.it</td>
+  <td>DinoSoft ISP</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.netlabs.org</td>
+  <td>The OS/2 OpenSource Project</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.batrans.com</td>
+  <td>Batrans Transporti Internazionali</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.trss.net</td>
+  <td>TRSS Consulting</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://midnightshour.org</td>
+  <td>Midnight's Hour BBS</td></tr>
+  <tr bgcolor="#e6e6e6"><td>http://www.ite.pt</td>
+  <td>IfThenElse - Informatica, Sistemas &amp; Servicos, Lda.</td></tr>
+ </table>
+</center>
+</P>
+</body>
+</html>

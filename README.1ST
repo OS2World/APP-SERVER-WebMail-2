@@ -1,0 +1,39 @@
+WebMail/2 source code
+=====================
+
+I can no longer maintain WebMail/2. The published source code of the latest release can
+be downloaded from the WebMail/2 homepage: http://www.michelinakis.gr/Dimitris/webmail.
+
+
+Development notes
+=================
+
+A few clarifications are in order, to help developers.
+
+
+1) The webmail2.cmd script is plain rexx (not VXREXX), but i've been developing
+the code under the VXREXX IDE, which helps development. Once modifications are made,
+the vx2rx.cmd script convers the VXREXX project code into plain rexx.
+
+2) To automate the process of creating a new distribution archive, i've created two
+scripts: makeb.cmd and maker.cmd. The first generates a "beta" archive and the
+second generates a "release" archive. They won't work out of the box because
+the paths are custom to my system. Once the paths are in order, you can execute
+the scripts with: "makeb.cmd b102" which generates a beta 102 release, and
+"maker.cmd 14.0" generates a release version 14. Ofcourse nobody has to follow
+this complex release/beta cycle, but the scripts show how the archives are made.
+
+3) The code isn't documented and some parts are very complex. A future developer
+should remove all MIME decoding algorithms with a DLL which does the job much
+better and faster. Hobbes has a good commandline tool for MIME decoding/encoding
+which can be easily converted into a REXX DLL.
+
+4) If you would like to publish your modifications, please join the mailing list
+and discuss your changes there. Other people might be interested or willing to
+participate in the development.
+
+
+Thank you.
+-- 
+Dimitrios Michelinakis
+

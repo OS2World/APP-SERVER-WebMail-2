@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html lang=en>
+<head>
+<title>HTML Validation: Choosing a DOCTYPE</title>
+<link rev=Made href="mailto:liam@htmlhelp.com">
+<link rel=Copyright href="/copyright.html">
+<link rel=StyleSheet href="/style.css" type="text/css">
+<link rel=StyleSheet href="/aural.css" type="text/css" media=aural>
+<meta name="author" content="Liam Quinn">
+<meta name="description" content="A guide to choosing a document type declaration for your HTML documents.">
+<meta name="keywords" content="HTML, HyperText Markup Language, DOCTYPE, document type declaration, doctype, DTD, validator, validate, validation, HTML validator, HTML validation, check, WDG, Web Design Group">
+</head>
+<body>
+<h2><img src="/icon/wdglogo1.gif" width=250 height=83 alt="The Web Design Group"></h2>
+<h1>Choosing a DOCTYPE</h1>
+<p>According to <abbr class=initialism title="HyperText Markup Language">HTML</abbr> standards, each <abbr class=initialism title="HyperText Markup Language">HTML</abbr> document requires a <em>document type declaration</em>. The "DOCTYPE" begins the <abbr class=initialism title="HyperText Markup Language">HTML</abbr> document and tells a <a href="./">validator</a> which version of <abbr class=initialism title="HyperText Markup Language">HTML</abbr> to use in checking the document's syntax.</p>
+<p class=note>If standard <abbr class=initialism title="HyperText Markup Language">HTML</abbr> does not meet your needs but you still wish to gain the benefits of <abbr class=initialism title="HyperText Markup Language">HTML</abbr> validation, see the section on <a href="customdtd.html">using a custom <abbr class=initialism title="Document Type Definition">DTD</abbr></a>.</p>
+<p>The following DOCTYPEs are commonly used:</p>
+<dl>
+<dt><a name=html4strict><code class=html>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd"&gt;</code></a></dt>
+<dd><p>This declares the document to be <strong>HTML 4.01 Strict</strong>. HTML 4.01 Strict is a trimmed down version of <a href="http://www.w3.org/TR/html401/">HTML 4.01</a> that emphasizes structure over presentation. <a href="/reference/html40/deprecated.html">Deprecated elements</a> and attributes (including most presentational attributes), <a href="/reference/html40/frames/">frames</a>, and link targets are not allowed in HTML 4 Strict. By writing to HTML 4 Strict, authors can achieve accessible, structurally rich documents that easily adapt to <a href="/reference/css/">style sheets</a> and different browsing situations. However, since many browsers lack full support for style sheets, HTML 4 Strict documents may look bland on older visual browsers such as Netscape Navigator 3.<var>x</var>.</p>
+<p class=note>Newer browsers such as Internet Explorer 5 for Mac,
+Netscape 6, and <a href="http://www.mozilla.org/">Mozilla</a> use a
+standards-compliant rendering for HTML 4 Strict documents. These browsers
+use a "quirks" mode for most other document types to emulate
+rendering bugs in older browsers.</p></dd>
+
+<dt><a name=html4transitional><code class=html>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd"&gt;</code></a></dt>
+
+<dd><p>This declares the document to be <strong>HTML 4.01 Transitional</strong>. HTML 4 Transitional includes all elements and attributes of <a href="#html4strict">HTML 4 Strict</a> but adds presentational attributes, <a href="/reference/html40/deprecated.html">deprecated elements</a>, and link targets. HTML 4 Transitional recognizes the relatively poor browser support for <a href="/reference/css/">style sheets</a>, allowing many <abbr class=initialism title="HyperText Markup Language">HTML</abbr> presentation features to be used as a transition towards HTML 4 Strict.</p>
+<div class=note><p>Netscape 6 and <a href="http://www.mozilla.org/">Mozilla</a>
+use a standards-compliant rendering for HTML 4.01 Transitional documents
+that include the <abbr class=initialism title="Uniform Resource Identifier">URI</abbr>
+of the <abbr class=initialism title="Document Type Definition">DTD</abbr>
+in the DOCTYPE. These browsers use a "quirks"
+mode to emulate rendering bugs in older browsers if the
+<abbr class=initialism title="Uniform Resource Identifier">URI</abbr> is
+omitted:</p>
+<p><code class=html>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;</code></p></div></dd>
+
+<dt><a name=html4frameset><code class=html>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+ "http://www.w3.org/TR/html4/frameset.dtd"&gt;</code></a></dt>
+
+<dd><p>This declares the document to be <strong>HTML 4.01 Frameset</strong>. HTML 4 Frameset is a variant of <a href="#html4transitional">HTML 4 Transitional</a> for documents that use <a href="/reference/html40/frames/">frames</a>.</p></dd>
+<dt><a name=html32><code class=html>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;</code></a></dt>
+<dd><p>This declares the document to be <strong>HTML 3.2</strong>. <a href="/reference/wilbur/">HTML 3.2</a> is well supported by most browsers in use. However, HTML 3.2 has limited support for <a href="/reference/css/">style sheets</a> and no support for <a href="/reference/html40/">HTML 4</a> features such as <a href="/reference/html40/frames/">frames</a> and internationalization.</p></dd>
+<dt><a name=html20><code class=html>&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN"&gt;</code></a></dt>
+<dd><p>This declares the document to be <strong>HTML 2.0</strong>. <a href="http://www.w3.org/MarkUp/html-spec/">HTML 2.0</a> is widely supported by browsers but lacks support for tables, frames, and internationalization, as well as many commonly used presentational elements and attributes.</p></dd>
+</dl>
+<div class=footer>
+<p class=toolbar><a href="/tools/validator/">Validate by <abbr class=initialism title="Uniform Resource Locator">URL</abbr></a>&#160;~ <a href="/tools/validator/upload.html">Validate by file upload</a>&#160;~ <a href="/tools/validator/direct.html">Validate by direct input</a></p>
+<div class=footer>
+<address>Developed and maintained by <a href="/%7Eliam/">Liam Quinn</a> &lt;<a href="mailto:liam@htmlhelp.com">liam@htmlhelp.com</a>&gt;</address>
+<p class=toolbar><a href="/"><img src="/icon/wdglogo-small.gif" width=105 height=40 alt="Web Design Group ~ "></a><a href="/reference/html40/">HTML&#160;4.0 Reference</a>&#160;~ <a href="/reference/wilbur/">HTML&#160;3.2 Reference</a>&#160;~ <a href="/tools/">Tools</a>&#160;~ <a href="/links/validators.htm">Other&#160;Validators</a></p>
+<p class=copyright><a href="/copyright.html">Copyright &#169;</a> 1998, 2000 Liam Quinn. All rights reserved.</p>
+</div>
+</div>
+</body>
+</html>

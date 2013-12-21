@@ -1,0 +1,6 @@
+ <tr>
+  <td height="50" align="center"><a href="*!WMFILENAME!*?addr&amp;d&amp;*!WMADDREMAIL!*"><img border="0" src="/webmailimages/delete.gif" alt="Delete" title="Delete"></a></td>
+  <td align="center">*!WMADDRBALIAS!*</td>
+  <td align="center">*!WMADDRBNAME!*</td>
+  <td align="center">*!WMADDREMAIL!*</td>
+ </tr>

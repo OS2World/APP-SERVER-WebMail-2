@@ -1,0 +1,12 @@
+Cache-Control: max-age=600
+Cache-Control: max-age=3600
+Expires: Fri, 30 Oct 1998 14:19:41 GMT
+
+Accept-Ranges: bytes
+Content-Length: 15977
+Connection: close
+Content-Type: application/zip
+
+--_=_=_=IMA.BOUNDARY.G0N35Y138764=_=_=_
+Content-Type: application/octet-stream; name="cgi-r2.zip"
+Content-Transfer-Encoding: base64

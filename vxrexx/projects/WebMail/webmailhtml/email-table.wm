@@ -1,0 +1,4 @@
+ <tr>
+  <td height="50" align="center"><a href="*!WMFILENAME!*?email&amp;d&amp;*!WMEMAILNUM!*"><img border="0" src="/webmailimages/delete.gif" alt="Delete" title="Delete"></a></td>
+  <td align="left">*!WMADDREMAIL!*</td>
+ </tr>

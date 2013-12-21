@@ -1,0 +1,14 @@
+<center>
+<table border="6">
+ <tr>
+  <td align="center"><img src="/webmailimages/actions.gif" alt="Actions" title="Actions"></td>
+  <td align="center"><img src="/webmailimages/read-subject.gif" alt="Subject" title="Subject"></td>
+  <td align="center"><img src="/webmailimages/from.gif" alt="From" title="From"></td>
+  <td align="center"><img src="/webmailimages/date.gif" alt="Date" title="Date"></td>
+  <td align="center"><img src="/webmailimages/attachment-yes.gif" alt="Attachment" title="Attachment"></td>
+  <td align="center"><img src="/webmailimages/priority-normal.gif" alt="Priority" title="Priority"></td>
+ </tr>
+*!WMEMAILTABLE!*
+</table>
+*!WMJUMPTABLE!*
+</center>

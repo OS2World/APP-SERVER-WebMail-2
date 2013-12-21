@@ -1,0 +1,329 @@
+<html>
+<head>
+ <title>WebMail/2 Documentation</title>
+ <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+ <meta name="generator" content="my damn hands">
+ <meta name="author" content="Dimitrios 'sehh' Michelinakis">
+</head>
+<body>
+<h1><a name="4"></a>Chapter 4 - Configuration</h1>
+<h2><a name="4.1"></a>4.1 - CGI Settings</h2>
+<P><a href="cgisettings.png"><img align="right" src="cgisettings-s.png"></a>
+WebMail2.cmd is the CGI script written in Classic Rexx. You can configure
+the script by either setting a few environment variables, or by editing the
+script itself.</P>
+<P>
+Option 1:<br>
+Set the following environment variables:</P>
+<P>
+<center>
+ <table width=95% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=15% bgcolor="#0099FF">
+    <font color="#ffffff">Variable</font>
+   </th>
+   <th width=15% bgcolor="#0099FF">
+    <font color="#ffffff">Parameter</font>
+   </th>
+   <th width=70% bgcolor="#0099FF">
+    <font color="#ffffff">Description</font>
+   </th>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_SERV</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>127.0.0.1</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>IP address of the machine running the WebManager</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_PORT</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>3511</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Port that WebManager listens to</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_PATH</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>(undefined)</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Path to .WM files. If undefined then default is %etc%\webmailhtml\<br>Note the trailing slash.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_PPATH</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>(undefined)</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Optional variable used as a prefix for the image or CSS file path.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_MAXE</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>10</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Maximum emails listed per page</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_CHARSET</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>iso-8859-1</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Default character set</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>WEBMAIL2_MAXSIZE</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>2097152</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Maximum size of file attachements in bytes</p></td>
+  </tr>
+ </table>
+</center></P>
+<P>
+Option 2:<br>
+Edit the file with a text editor (e.exe,tedit etc). There are specific options
+that you may change. You can also change other things in the script but you
+should only do so if you are experienced with REXX structures.</P>
+<P>
+<center>
+ <table width=95% border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=15% bgcolor="#0099FF">
+    <font color="#ffffff">Variable</font>
+   </th>
+   <th width=15% bgcolor="#0099FF">
+    <font color="#ffffff">Parameter</font>
+   </th>
+   <th width=70% bgcolor="#0099FF">
+    <font color="#ffffff">Description</font>
+   </th>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!serv</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>127.0.0.1</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>IP address of the machine running the WebManager</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!port</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>3511</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Port that WebManager listens to</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!WMPath</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>""</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Path to .WM files. If empty ("") then default is %etc%\webmailhtml</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!PrefixPath</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>""</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Optional variable used as a prefix for the image or CSS file path.</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!MaxEmails</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>10</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Maximum emails listed per page</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!CharSet</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>iso-8859-1</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Default character set</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=15% bgcolor="#e6e6e6"><p>Globals.!MaxAttachSize</p></td>
+   <td width=15% bgcolor="#e6e6e6"><p>2097152</p></td>
+   <td width=70% bgcolor="#e6e6e6"><p>Maximum size of file attachements in bytes</p></td>
+  </tr>
+ </table>
+</center>
+</P>
+<h2><a name="4.2"></a>4.2 - WebManager Setup</h2>
+<P>
+WebManager is the daemon which controls the user authentication and
+manages the online users. A single WebManager may control multiple
+webserver CGI's. Each webmail2.cmd CGI may connect to the same WebManager
+so that users will get access to the same email service from multiple
+web sites or web servers using distributed bandwidth software. Bellow
+is an explanation of each component window in the setup program.
+</P>
+<h2><a name="4.2.1"></a>4.2.1 - Users</h2>
+<P><a href="users.png"><img align="right" src="users-s.png"></a>
+<B>Users Database</B><br>
+The users database allows you to add/remove/change users if you are using
+the Internal Users Database. In all other cases this is disabled. You may
+enter single usernames or usernames along with their domain name (user@domain)
+if you want to limit domains, or you are using a POP3 server which supports
+virtual domain names.</P>
+<P>
+<B>New Users</B><br>
+This is enabled only when the New User Registration feature is enabled, and
+you have disabled automatic user registration. When a new user registers his
+details will be shown here and you will be able to Accept the user or Reject
+him. If you Accept the user then his details are passed to the email server,
+else he is deleted. Deleted users may re-register unless their user ID is
+listed in the BlackList.
+</P>
+<h2><a name="4.2.2"></a>4.2.2 - Settings 1</h2>
+<P><a href="settings1.png"><img align="right" src="settings1-s.png"></a>
+This page allows you to change important settings which control the way
+WebManager works in your system. The default settings can be used in almost
+all cases on single-server systems.</P>
+<P>
+<center>
+ <table border=0 cellpadding=4 cellspacing=0>
+  <tr valign=top>
+   <th width=50% bgcolor="#0099FF">
+    <font color="#ffffff">Setting</font>
+   </th>
+   <th width=50% bgcolor="#0099FF">
+    <font color="#ffffff">Value</font>
+   </th>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>IP</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>127.0.0.1</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>Port</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>3511</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>Idle timeout</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>10</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>User refresh</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>120</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>POP3 server</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>127.0.0.1</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>POP3 port</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>110</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>SMTP server</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>127.0.0.1</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>SMTP port</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>25</p></td>
+  </tr>
+  <tr valign=top>
+   <td width=50% bgcolor="#e6e6e6"><p>POP3 type</p></td>
+   <td width=50% bgcolor="#e6e6e6"><p>Internal Users</p></td>
+  </tr>
+ </table>
+</center></P>
+<P>
+Your choice of POP3 type depends on the e-mail server you are using.
+There are two ways of adding users: manually or automatically.  If your
+e-mail server is listed there, selecting it will allow WebMail/2 to
+automatically communicate with the mail server to get user information.
+You may also be required to enter the path of your email server installation.
+If you use Generic POP3 then you are not required to do anything else,
+WebMail/2 will communicate with the POP3 server for the authentication.
+For Internal Users, you will have to manually add user information later on.</P>
+<P>
+The User Refresh timer is an important feature. When you add/remove users
+from your POP3 server, create a file named 'refresh' in the currect directory
+of WebManager. If this file exists WebManager will refresh the users data
+base in the next 120 minutes.
+</P>
+<P>
+The 'Ignore domains' option is selected for specific email servers which
+don't support multiple domains, thus the users database doesn't record
+domains.</P>
+<P>
+The 'Full email' option will force WebMail/2 to login to the POP3 server
+with the full (user@domain) email address of the user. This is useful on
+POP3 servers which support virtual domains.</P>
+<P>
+When you have finished entering information on this page, click Save.
+</P>
+<h2><a name="4.2.3"></a>4.2.3 - Settings 2</h2>
+<P><a href="settings2.png"><img align="right" src="settings2-s.png"></a>
+<B>Security</B><br>
+If a specific number of authentication failures occurs then WebManager
+will run the specified application.</P>
+<P>
+You may also enable logging support, in which case you may choose
+the path and filename to write the log output.</P>
+<P>
+<B>New User Registration</B><br>
+This feature allows users to register email addresses with your POP3 server
+over the web. This feature works only with the supported OS/2 email servers,
+it does not work with Generic POP3 servers and InetMailPro.</P>
+<P>
+New users may be logged and kept within WebManager for you to allow them
+access, their email will not be created within the POP3 server unless you
+authorise them. You may choose to enable 'Automatic register new users'
+which doesn't require the administrators intervention, new users will be
+automatically registered within the POP3 server and their email will be
+usable from then on.</P>
+<P>
+If you enable the New User Registration, first you also need to rename
+userlogin2.wm to userlogin.wm. This will add the 'Register' button on your
+login page. Secondly you need to edit the newuser.wm and change the email
+domain names that your users are allowed to pick.</P>
+<P>
+When you have finished entering information on this page, click Save.
+</P>
+<h2><a name="4.2.4"></a>4.2.4 - Access 1</h2>
+<P><a href="access1.png"><img align="right" src="access1-s.png"></a>
+<B>Server Access Control</B><br>
+This is a list of IP ranges which are allowed to access the WebManager. You
+should enter the IP address of IP range of the webserver which runs the
+webmail2.cmd CGI. No one else should have access to the webmanager. Its a
+good idea to use 127.0.0.1 if your webserver runs on the same machine as
+WebManager.</P>
+<P>
+<B>Client Access Control</B><br>
+Client Access Control works similarly.  Unless you know the exact IP
+addresses of all of the computers that you want to access your e-mail
+via the web from, you will need to enter 0.0.0.0, which specifies all IP
+addresses.  If you want to enter specific IP addresses, you can.  If you
+want to enter a subnet of addresses, you can.  For example, to specify
+all hosts within the 192.168 subnet, use 192.168.0.0.
+</P>
+<h2><a name="4.2.5"></a>4.2.5 - Access 2</h2>
+<P><a href="access2.png"><img align="right" src="access2-s.png"></a>
+<B>User BlackList</B><br>
+The user names listed here will not be allowed access via WebMail/2 even
+if they exist in the POP3 user database. Also these user names will not
+be allowed to register as new users if the New Users Registration feature
+is enabled.
+</P>
+<P>
+<B>Accepted Domains</B><br>
+Only the domain names listed here will be given access. All other domains
+will be rejected and users will not be able to access their email. This
+is useful if you have multple domains and you only want to give access to
+a selection of those domains.</P>
+<P>
+For exaple, user@mydomain.com will only be able to access his emails if
+'mydomain.com' is listed in the Accepted Domains section.
+</P>
+<P>
+<B>NOTE:</B>If there is only one domain listed, then users are allowed to
+login with their user ID only (no domain). If there are more than one domains
+then users are required to enter their full email address (user@domain) to
+login.
+</P>
+<h2><a name="4.3"></a>4.3 - Multi-server Configuration</h2>
+<P>
+   In a one-server configuration there is only one server to deal with.
+   In multi-server configurations, however, things are a little different.
+   You have to decide which machines will run the WebManager and which web
+   servers are going to use the WebMail/2 CGI script. The only real
+   requirement WebManager and the CGI script have is the operating system:
+   they must run under OS/2.  That means that if you're running a non-OS/2
+   e-mail server, WebManager must run on the web server.  If you're
+   running an OS/2 mail server, you will most likely want to put
+   WebManager on the mail server, especially if you are running Inet.Mail,
+   Weasel or InetPowerServer.  These servers can take advantage of external
+   DLL's for enhanced function, but only if WebManager is running on the
+   same machine as the e-mail server.  Of course, if a firewall is
+   denying anything but ports 110 and 25 to your e-mail server and you
+   don't have the ability to change this, you will have to run the
+   WebManager on the web server.</P>
+<P>
+   You will need the loopback interface for whatever machine WebManager
+   is running on.  If it is the web server, you will 127.0.0.1 to talk to
+   the WebManager in WebMail2.CMD and the actual IP adresses of the POP3
+   and SMTP servers in the WebManager.  If the WebManager is running on
+   the e-mail server, you will do the exact opposite:  use 127.0.0.1 to
+   talk to the e-mail servers, while using the actual IP adresses in
+   WebMail2.CMD.  Also, the files in DLL.ZIP may have to be split between
+   machines.
+</P>
+</body>
+</html>

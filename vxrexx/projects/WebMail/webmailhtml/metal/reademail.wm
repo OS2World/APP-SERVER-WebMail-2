@@ -1,0 +1,33 @@
+<center>
+<font size="5"><b>*!SERVERERROR!*</b></font>
+<table border=0 cellspacing=2 cellpadding=1>
+ <tr>
+  <td align="center" rowspan="2">*!WMXFACE!*</td>
+  <td align="center"bgcolor="#B0B0B0">Actions</td>
+  <td align="center"bgcolor="#B0B0B0">Subject</td>
+  <td align="center"bgcolor="#B0B0B0">From</td>
+  <td align="center"bgcolor="#B0B0B0">Date</td>
+  <td align="center"bgcolor="#B0B0B0">Attachment</td>
+  <td align="center"bgcolor="#B0B0B0">Priority</td>
+ </tr>
+ <tr>
+  <td align="center" valign="center"><font size="-1">
+   <a href="*!WMFILENAME!*?new&amp;*!WMEMAILNUM!*">Reply</a>
+   <a href="*!WMFILENAME!*?delete&amp;*!WMEMAILNUM!*&amp;*!WMNEXTEMAILNUM!*">Delete</a>
+   <a href="*!WMFILENAME!*?addr&amp;a&amp;*!WMEMAILNUM!*&amp;*!WMFULLFROM!*">Add to Contacts</a>
+   <a href="*!WMFILENAME!*?read&amp;*!WMEMAILNUM!*&amp;p" target="_blank">Print</a>
+   <a href="*!WMFILENAME!*?read&amp;*!WMPREVEMAILNUM!*">Previous</a>
+   <a href="*!WMFILENAME!*?read&amp;*!WMNEXTEMAILNUM!*">Next</a>
+  </font></td>
+  <td align=left bgcolor="#E0E0E0"><font size="3">*!WMEMAILSUBJECT!*</font></td>
+  <td align=left bgcolor="#E0E0E0"><font size="3"><a href="*!WMFILENAME!*?new&amp;*!WMEMAILNUM!*">*!WMEMAILFROM!*</a></font></td>
+  <td align=left bgcolor="#E0E0E0"><font size="2">*!WMEMAILDATE!*</font></td>
+  <td align="center" bgcolor="#E0E0E0"><font size="-1">*!WMATTACHMENTSTABLE!*</font></td>
+  <td align="center" bgcolor="#E0E0E0"><font size="-1">*!WMEMAILPRIORITY!*</font></td>
+ </tr>
+</table>
+<table width=80%>
+<tr><td bgcolor="#E0E0E0" width=100% align="left"><font size="5" align="left"><pre wrap>
+*!WMEMAILBODY!*</pre></font></td></tr>
+</table>
+</center>

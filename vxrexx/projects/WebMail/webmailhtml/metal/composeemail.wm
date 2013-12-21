@@ -1,0 +1,55 @@
+<form action="*!WMFILENAME!*" method="post" enctype="multipart/form-data">
+<input type="hidden" name="postnew" value="1">
+<input type="hidden" name="charset" value="*!WMCHARSET!*">
+<input type="hidden" name="inreplyto" value="*!WMINREPLYTO!*">
+<center>
+  <table border="0">
+  <tr>
+    <td align="right">From:</td>
+    <td align="left" height="22"><select name="f">*!WMEMAILSELECT!*</select></td>
+  </tr>
+  <tr>
+    <td align="right">To:</td>
+    <td align="left">
+     <input type="text" value="*!WMEMAILFROM!*" name="t" size="30">
+     <input type="hidden" name="rb" value="f">
+    </td>
+  </tr>
+  <tr>
+    <td align="right">Cc:</td>
+    <td align="left" height="22"><input value="*!WMEMAILCC!*" type="text" name="c" size="30"></td>
+  </tr>
+  <tr>
+    <td align="right">Bcc:</td>
+    <td align="left" height="22"><input value="*!WMEMAILBCC!*" type="text" name="b" size="30"></td>
+  </tr>
+  <tr>
+    <td align="right">Subject:</td>
+    <td align="left"><input type="text" value="*!WMEMAILSUBJECT!*" name="s" size="30"></td>
+  </tr>
+  <tr>
+    <td align="right">Priority:</td>
+    <td align="left">
+    <select name="p">
+     <option selected>Normal</option>
+     <option>High</option>
+     <option>Low</option>
+    </select>
+   </td>
+  </tr>
+ </table>
+ <p>
+  <input type="submit" value="Post">
+ </p>
+ <p>
+<textarea name="body" rows="17" cols="80">
+*!WMEMAILBODY!*</textarea>
+ </p>
+ <table border="0">
+ <tr>
+  <td align="right">Attachment</td>
+  <td align="left" height="22"><input type="file" name="upload_file"></td>
+ </tr>
+ </table>
+ </center>
+</form>

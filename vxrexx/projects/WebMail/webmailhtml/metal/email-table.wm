@@ -1,0 +1,4 @@
+ <tr>
+  <td bgcolor="#B0B0B0" align="center"><a href="*!WMFILENAME!*?email&amp;d&amp;*!WMEMAILNUM!*">Delete</a></td>
+  <td bgcolor="#E0E0E0" align="left">*!WMADDREMAIL!*</td>
+ </tr>

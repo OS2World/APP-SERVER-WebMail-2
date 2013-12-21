@@ -1,0 +1,53 @@
+=========
+Function: ZXCheckUser( <path>, <username>, <password> )
+
+Description:
+This function will check whether the given username and password are valid.
+<path>     -- Path to ZXMail installation (maybe not required)
+<username> -- String of the user ID
+<password> -- String of the password
+
+Return values:
+0 "User ok."
+1 "Error 1. Wrong Number of Arguments."
+2 "Error 2. User or password not ok."
+3 "Error 3. Other error."
+
+=========
+Function: ZXListUsers( <path>, <stem> )
+
+Description:
+<path> -- Path to ZXMail installation (maybe not required)
+<stem> -- A stem variable holding all the usernames. username.0 holds
+          the number of users.
+
+This function will return a list of usernames.
+
+Return values:
+0 "Users listed ok."
+1 "Error 1. Wrong Number of Arguments."
+2 "Error 2. User list not available."
+3 "Error 3. Other error."
+
+=========
+Function: HUserInfo( <path>, <username>, <stem>)
+
+Description:
+<path>     -- Path to ZXMail installation (maybe not required)
+<username> -- String of the user ID
+<stem>     -- A stem variable holding all the user information.
+
+This function will return the user information into the
+specified stem variable.
+
+The stem has the format of:
+
+stem.!username = User ID
+stem.!realname = Users real name
+<others may be added here>
+
+Return values:
+0 "Users listed ok."
+1 "Error 1. Wrong Number of Arguments."
+2 "Error 2. User info not available."
+3 "Error 3. Other error."

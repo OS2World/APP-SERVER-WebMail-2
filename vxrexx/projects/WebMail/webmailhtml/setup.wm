@@ -1,0 +1,44 @@
+<p>
+<h2><b>*!SERVERERROR!*</b></h2>
+<form action="*!WMFILENAME!*" method="post" name="Signature Form">
+<input type="hidden" name="signaturesave" value="1">
+<input type="hidden" name="returnto" value="*!WMEMAILNUM!*">
+<center>
+<table border=6>
+ <tr>
+  <td colspan="2" align="center"><img src="/webmailimages/options.gif" alt="Options:" title="Options"></td>
+ </tr>
+ <tr>
+  <td height="50" align=center>Default email&nbsp;</td>
+  <td align=center>&nbsp;&nbsp;<select name="from">*!WMEMAILSELECT!*</select>&nbsp;&nbsp;<br>
+   <a href="*!WMFILENAME!*?email">Email Setup</a>
+  </td>
+ </tr>
+ <tr>
+  <td height="50" align=center>Always Bcc emails to&nbsp;</td>
+  <td align=center>&nbsp;&nbsp;<input type="text" name="bcc" size="30" value="*!WMEMAILBCC!*">&nbsp;&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="50" align=center>X-Face&nbsp;</td>
+  <td align=center>&nbsp;&nbsp;<input type="text" name="xface" size="30" value="*!WMXFACE!*">&nbsp;&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="50" align=center>Show email headers&nbsp;</td>
+  <td align=center>&nbsp;&nbsp;<input type="checkbox" name="h" *!WMSHOWHEADERS!* />&nbsp;&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="50" align=center>Allow HTML emails&nbsp;</td>
+  <td align=center>&nbsp;&nbsp;<input type="checkbox" name="t" *!WMSHOWHTML!* />&nbsp;&nbsp;</td>
+ </tr>
+ <tr>
+  <td height="50" align=center>TimeZone offset&nbsp;</td>
+  <td align=center>&nbsp;&nbsp;<select name="timezoneoffset">*!WMTIMEZONESELECT!*</select>&nbsp;&nbsp;</td>
+ </tr>
+</table>
+<p></p>
+<img src="/webmailimages/signature.gif" alt="Signature:" title="Signature"><br>
+<textarea name="s" rows="5" cols="50">
+*!WMSIGNATURE!*</textarea>
+<p><input type="submit" value="Save"></p>
+</center>
+</form>

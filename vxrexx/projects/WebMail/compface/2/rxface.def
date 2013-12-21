@@ -1,0 +1,4 @@
+library rxface
+exports
+	UNCFACE = UncFace
+	COMPFACE = CompFace

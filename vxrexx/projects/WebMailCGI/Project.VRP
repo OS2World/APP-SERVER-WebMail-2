@@ -1,0 +1,10 @@
+VX-REXX OS/2 V2.14 Build B3
+VRX: webmail2.VRX
+MacroPath: VRM:C:\vxrexx\Projects\WebMailCGI
+EXEPath: C:\Utils\vxrexx\projects\WebMailCGI\webmail2.exe
+RunParameters: 
+RunDirectory: C:\vxrexx\Projects\WebMailCGI
+VRXWindow: __VREMainWindow,1,-23,-47,8070,3565
+VRXWindow: __VRESectionListWindow,1,1120,48,6902,3342
+VRXWindow: __VREToolsWindow,0,1084,6119,4487,1669
+UserFile: 1

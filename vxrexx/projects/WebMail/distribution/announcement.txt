@@ -1,0 +1,44 @@
+I've released a new version of WebMail/2.
+
+WebMail/2 is a web to email gateway. WebMail/2 allows you to use your
+web browser as a full-featured e-mail client. It does this by interfacing
+your web server with your e-mail server and allowing the web browser to
+send and receive e-mail information. You can use your existing email
+solution with WebMail/2, you are not required to change anything from
+your current configuration.
+
+Features among other:
+
+Authentication daemon, multiple user databases, dynamicly parsed HTML files,
+full REXX CGI procedures, Contacts manager, Signature support, admins can
+change the code to their own needs and add more functionality. Unlimited
+number of emails can be listed, sorted in multiple pages, Upload and Download
+of file attachments, themes, external authentication, high security per user
+and via APOP, web server authentication. New User Registration feature allows
+users to create their own email accounts. Extra features like multiple languages
+and X-Face support.
+
+
+Latest public version can be found at:
+http://www.michelinakis.gr/Dimitris/
+
+
+To receive beta versions please join our mailing list. To subscribe to the
+mailinglist, simply send a message with the word 'subscribe' in the Subject:
+field to the -request address of that list.
+
+        To: webmail2-request@michelinakis.gr
+        Subject: subscribe
+
+To subscribe to the digest, simply send a message with the word 'subscribe'
+in the Subject: field to the following address.
+
+        To: webmail2-d-request@michelinakis.gr
+        Subject: subscribe 
+
+
+Bug reports can be submitted at the BugTracker:
+
+        URL: http://www.michelinakis.gr/Dimitris/webmail/bugtracker/
+
+Thank you.

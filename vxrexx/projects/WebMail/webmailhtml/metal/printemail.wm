@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META HTTP-EQUIV="content-type" CONTENT="text/html; charset=*!WMCHARSET!*">
+<META HTTP-EQUIV="expires" content="0">
+<META HTTP-EQUIV="pragma" content="no-cache">
+<META HTTP-EQUIV="cache-control" content="no-cache">
+<title>*!WMVERSION!* - *!WMUSER!*</title>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#000000" vlink="#000000" alink="#000000">
+<br>
+<center>
+<b>Email Message</b>
+<font size="5"><b>*!SERVERERROR!*</b></font>
+<table border="6">
+ <tr>
+  <td align="center"><b>From</b></td>
+  <td align="center"><b>Subject</b></td>
+  <td align="center"><b>Date</b></td>
+  <td align="center"><b>Attachment</b></td>
+ </tr>
+ <tr>
+  <td align="center"><font size="3">*!WMEMAILFROM!*</font></td>
+  <td align="center"><font size="3">*!WMEMAILSUBJECT!*</font></td>
+  <td align="center"><font size="2">*!WMEMAILDATE!*</font></td>
+  <td align="center">*!WMATTACHMENTSTABLE!*</td>
+ </tr>
+</table>
+<table align="center">
+<tr><td><font size="5"><pre wrap>
+*!WMEMAILBODY!*</pre></font></td></tr>
+</table>
+</center>
+</body>
+</html>

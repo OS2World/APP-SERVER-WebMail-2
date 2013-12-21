@@ -1,0 +1,39 @@
+                          Upload Information Template for Hobbes.nmsu.edu
+                          ===============================================
+
+        Archive Filename: webmail::;;.zip
+       Short Description: WebMail/2 allows users to read emails via the web.
+        Long Description: Web to Email interface for your
+                          existing email service. It uses
+                          your existing POP3/SMTP to give
+                          your users access from the web.
+                          Supports OS/2 email servers and
+                          any POP3/SMTP service of any
+                          platform. Runs under any OS/2
+                          or Linux web server along with
+                          an OS/2 management daemon.
+                          Supported under OS/2:
+                          Weasel, IPS, InetMailPro,
+                          InetMail, OS2PopS, ZxMail, and
+                          any generic pop3 and smtp server.
+
+      Proposed directory
+           for placement: /pub/os2/apps/internet/www/cgi
+
+               Your name: Dimitrios 'sehh' Michelinakis
+           Email address: sehh@altered.com
+    Program contact name: (same)
+   Program contact email: (same)
+             Program URL: http://www.michelinakis.gr/Dimitris/soft.html
+
+      Would you like the
+   contact email address
+    included in listings? yes
+
+Operating System/Version: OS/2 Warp (optional Linux/FreeBSD)
+ Additional requirements: Web server
+
+                Replaces: webmail*.zip
+
+
+

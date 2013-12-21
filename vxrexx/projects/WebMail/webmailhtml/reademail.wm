@@ -1,0 +1,33 @@
+<center>
+<font size="5"><b>*!SERVERERROR!*</b></font>
+<table border="6">
+ <tr>
+  <td align="center"><img src="/webmailimages/actions.gif" alt="Actions" title="Actions"></td>
+  <td align="center"><img src="/webmailimages/read-subject.gif" alt="Subject" title="Subject"></td>
+  <td align="center"><img src="/webmailimages/from.gif" alt="From" title="From"></td>
+  <td align="center"><img src="/webmailimages/date.gif" alt="Date" title="Date"></td>
+  <td align="center"><img src="/webmailimages/attachment-yes.gif" alt="Attachment" title="Attachment"></td>
+  <td align="center"><img src="/webmailimages/priority-normal.gif" alt="Priority" title="Priority"></td>
+  <td align="center" rowspan="2">*!WMXFACE!*</td>
+ </tr>
+ <tr>
+  <td align="center">
+   <a href="*!WMFILENAME!*?new&amp;*!WMEMAILNUM!*"><img name="Reply" border="0" src="/webmailimages/reply.gif" alt="Reply" title="Reply"></a>
+   <a href="*!WMFILENAME!*?delete&amp;*!WMEMAILNUM!*&amp;*!WMNEXTEMAILNUM!*"><img name="Delete" border="0" src="/webmailimages/delete.gif" alt="Delete" title="Delete"></a>
+   <a href="*!WMFILENAME!*?addr&amp;a&amp;*!WMEMAILNUM!*&amp;*!WMFULLFROM!*"><img name="Add to Contacts" border="0" src="/webmailimages/addaddress.gif" alt="Add to Contacts" title="Add to Contacts"></a>
+   <a href="*!WMFILENAME!*?read&amp;*!WMEMAILNUM!*&amp;p" target="_blank"><img name="Print" border="0" src="/webmailimages/print.gif" alt="Print" title="Print"></a>
+   <a href="*!WMFILENAME!*?read&amp;*!WMPREVEMAILNUM!*"><img src="/webmailimages/prev.gif" border="0" alt="Previous Email" title="Previous Email"></a>
+   <a href="*!WMFILENAME!*?read&amp;*!WMNEXTEMAILNUM!*"><img src="/webmailimages/next.gif" border="0" alt="Next Email" title="Next Email"></a>
+  </td>
+  <td align="center"><font size="3">*!WMEMAILSUBJECT!*</font></td>
+  <td align="center"><font size="3"><a href="*!WMFILENAME!*?new&amp;*!WMEMAILNUM!*">*!WMEMAILFROM!*</a></font></td>
+  <td align="center"><font size="2">*!WMEMAILDATE!*</font></td>
+  <td align="center">*!WMATTACHMENTSTABLE!*</td>
+  <td align="center">*!WMEMAILPRIORITY!*</td>
+ </tr>
+</table>
+<table align="center">
+<tr><td align="left"><font size="5" align="left"><pre wrap>
+*!WMEMAILBODY!*</pre></font></td></tr>
+</table>
+</center>
